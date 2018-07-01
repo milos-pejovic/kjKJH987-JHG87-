@@ -1,8 +1,31 @@
-* "Make custom dice"
-  * Kad se ukuca npr "7d" ne napravi se kocka, ali se registruje kao da je narpavljena. Ako se proba ponovo sa "7" (ovo ce biti validan unos) kazace "Dice already exists."
+===============================================================================
+  General
+===============================================================================
 
 * Napraviti
   * Fold all / Expand all tabs ('Quick roll', 'Advanced roll', 'Presets')
+
+* All Buttons style
+  * Ujednaciti still dugmadi
+
+* Refresh preventer
+  * Kao na Estimatoru
+
+* Comment css
+  * split css
+    * Main
+    * Quick roll
+    * Advanced roll
+
+* <head>
+  * Add stuff here
+
+===============================================================================
+  Quick roll
+===============================================================================
+
+* "Make custom dice"
+  * Kad se ukuca npr "7d" ne napravi se kocka, ali se registruje kao da je narpavljena. Ako se proba ponovo sa "7" (ovo ce biti validan unos) kazace "Dice already exists."
 
 * Custom dice 0
   * Onemoguciti
@@ -19,18 +42,6 @@
   
 * Range
   * Kod custom dice da bude i opcija za "Range" npr 3-17
-
-* Refresh preventer
-  * Kao na Estimatoru
-
-* Comment css
-  * split css
-    * Main
-    * Quick roll
-    * Advanced roll
-
-* <head>
-  * Add stuff here
 
 ===============================================================================
   Advanced rolls
