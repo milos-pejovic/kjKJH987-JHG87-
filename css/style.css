@@ -1,0 +1,135 @@
+* {
+  /* font-family: 'Baskerville Old Face'; */
+  /* font-family: 'Lucida Caligraphy'; */
+  font-family: 'Times New Roman';
+}
+
+.container .main-title {
+  font-size: 70px;
+  margin: 30px;
+}
+
+.container .make-custom-dice {
+  margin-bottom: 10px;
+}
+
+.container .dice-buttons button,
+.container .custom-dice-buttons button,
+.container .advanced-roll .dice button {
+  width: 70px;
+  height: 60px;
+  border-radius: 25px;
+  font-size: 26px;
+  font-weight: bold;
+  background-image: url('../images/marble1.jpg');
+  cursor: pointer;
+}
+
+.container .custom-dice-buttons {
+  margin-top: 10px;
+}
+
+.container .result-div {
+  margin-top: 50px
+}
+
+.container .result {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.container .accordion .card-link {
+  color: #000;
+  display: block;
+}
+
+.container .accordion .card-header {
+  background-color: #e2cec0;
+  background-image: url('../images/marble5.jpg');
+}
+
+.elements-repository {
+  display: none;
+}
+
+.container .advanced-roll .math-controls,
+.container .advanced-roll .clear-controls {
+  display: inline-block;
+}
+
+.container .math-controls button {
+  height: 40px;
+  cursor: pointer;
+  width: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container .clear-controls button {
+  height: 40px;
+  font-size: 14px;
+}
+
+.container .advanced-roll .dice {
+  margin-bottom: 20px;
+}
+
+.container .advanced-roll .controls {
+  margin-bottom: 10px;
+}
+
+.container .work-area .start-number {
+  /* border: none;
+  border-bottom: 1px solid darkgray; */
+}
+
+.container .adv-roll-segment {
+  position: relative;
+  display: inline-block;
+  background-color: rgb(220, 220, 220);
+  height: 60px;
+  width: 97px;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+.container .work-area input {
+  left: 17px;
+  text-align: center;
+  font-size: 26px;
+  width: 55px;
+}
+
+.container .work-area span {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container .work-area .adv-roll-segment .close {
+  position: absolute;
+  top: 0;
+  right: 2;
+  font-size: 20;
+}
+
+.container .adv-roll-btn {
+  padding: 10px 20px;
+}
+
+.container .advanced-roll .warnings li {
+  color: red;
+}
+
+.container .adv-roll-result {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.container .advanced-roll .start-segment {
+  text-align: center;
+}
+
+.container .advanced-roll .remove-all-segments {
+  margin-left: 10px;
+}

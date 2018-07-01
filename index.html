@@ -1,0 +1,164 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center main-title">Randomizer</h1>
+			</div>
+		</div><!-- row END -->
+
+		<div class="accordion">
+			<div class="card quick-role">
+				<a class="card-link" data-toggle="collapse" href="#collapseOne">
+					<div class="card-header">
+						<h3>Quick Roll</h3>
+					</div>
+				</a>
+
+				<div id="collapseOne" class="collapse show" data-parent="#accordion">
+					<div class="card-body">
+
+						<div class="commands">
+							<button class="make-custom-dice">Make custom dice</button>
+						</div>
+
+						<div class="dice-buttons text-center">
+							<button data-diceSize="2">d2</button>
+							<button data-diceSize="3">d3</button>
+							<button data-diceSize="4">d4</button>
+							<button data-diceSize="6">d6</button>
+							<button data-diceSize="8">d8</button>
+							<button data-diceSize="10">d10</button>
+							<button data-diceSize="12">d12</button>
+							<button data-diceSize="20">d20</button>
+							<button data-diceSize="30" >d30</button>
+							<button data-diceSize="100">d100</button>
+						</div>
+
+						<div class="custom-dice-buttons text-center">	
+						</div>
+						
+						<div class="result-div">
+							<p class="result text-center">0</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- card END -->
+		
+			<div class="card advanced-roll">
+				<a class="card-link" data-toggle="collapse" href="#collapseTwo">
+					<div class="card-header">
+						<h3>Advanced Roll</h3>
+					</div>
+				</a>
+
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+
+						<div class="controls">
+							<div class="math-controls">
+								<button class="add-number math-operation" data-operation="addition"><i class="fas fa-plus"></i></button>
+								<button class="substract-number math-operation" data-operation="substraction"><i class="fas fa-minus"></i></button>
+								<button class="multiply-number math-operation" data-operation="multiplication"><i class="fas fa-times"></i></button>
+								<button class="divide-number math-operation" data-operation="division"><i class="fas fa-divide"></i></button>							
+							</div><!-- math-operations END-->
+	
+							<div class="clear-controls">
+								<button class="remove-segments clear-control remove-all-segments">Remove all segments</button>
+								<button class="remove-segments clear-control clear-fields">Clear fields</button>
+							</div>
+						</div><!-- controls END -->
+						
+						<div class="instructions">
+							<ul>
+								<li>Click on a mathematical operation to add segment.</li>
+								<li>Enter a number or dice definition (e.g. d20) in each field.</li>
+								<li>Operations are applied in the order defined in below <b><u>not</u></b> in mathematical order of operations.</li>
+							</ul>
+						</div><!-- instructions END -->
+
+						<ul class="warnings">
+						</ul>
+
+						<div class="work-area">
+							<div class="adv-roll-segment start-segment">
+								<input class="start-number" maxLength="4" max="9999" type="text">
+							</div>
+						</div><!-- work-area END-->		
+
+						<button class="adv-roll-btn">Roll</button>
+
+						<div class="adv-roll-result">
+							<p>0</p>
+						</div>
+
+					</div>
+				</div>
+			</div><!-- card END -->
+		
+			<div class="card presets">
+				<a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+					<div class="card-header">
+						<h3>Presets</h3>
+					</div>
+				</a>
+
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						Lorem ipsum..
+					</div>
+				</div>
+			</div><!-- card END -->
+		</div><!-- accordion END -->
+	</div><!-- container END -->
+
+	<!-- Elements Repository -->
+
+	<div class="elements-repository">
+		<div class="quick-roll-button-repo">
+			<button data-diceSize="diceSizeNumber" class="custom-dice-diceSizeNumber">ddiceSizeNumber</button>
+		</div>
+		
+		<div class="addition-repo">
+			<div class="adv-roll-segment" data-operation="addition">
+				<span><i class="fas fa-plus"></i></span> <input maxLength="4" max="9999" type="text">
+				<span class="close"><i class="fas fa-times"></i></span>
+			</div>
+		</div>
+
+		<div class="substraction-repo">
+			<div class="adv-roll-segment" data-operation="substraction">
+				<span><i class="fas fa-minus"></i></span> <input maxLength="4" max="9999" type="text">
+				<span class="close"><i class="fas fa-times"></i></span>
+			</div>
+		</div>		
+
+		<div class="multiplication-repo">
+			<div class="adv-roll-segment" data-operation="multiplication">
+				<span><i class="fas fa-times"></i></span> <input maxLength="4" max="9999" type="text">
+				<span class="close"><i class="fas fa-times"></i></span>
+			</div>
+		</div>	
+
+		<div class="division-repo">
+			<div class="adv-roll-segment" data-operation="division">
+				<span><i class="fas fa-divide"></i></span> <input maxLength="4" max="9999" type="text">
+				<span class="close"><i class="fas fa-times"></i></span>
+			</div>		
+		</div>
+	</div><!-- elements-repository -->
+
+	<script src="js/utils.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/quickroll.js"></script>
+	<script src="js/advancedroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+* "Make custom dice"
+  * Kad se ukuca npr "7d" ne napravi se kocka, ali se registruje kao da je narpavljena. Ako se proba ponovo sa "7" (ovo ce biti validan unos) kazace "Dice already exists."
+
+* Napraviti
+  * Fold all / Expand all tabs ('Quick roll', 'Advanced roll', 'Presets')
+
+* Custom dice 0
+  * Onemoguciti
+
+* Indicator
+  * U quick roll Indikator koja je kocka poslednja rollovana.
+
+* Vrste rollova
+  * Trehsold rolls (dice vs treshold)
+  * Opposed roll (dice vs dice)
+  * Dice pool 
+    * treshold
+    * sum
+  
+* Range
+  * Kod custom dice da bude i opcija za "Range" npr 3-17
+
+* Refresh preventer
+  * Kao na Estimatoru
+
+* Comment css
+  * split css
+    * Main
+    * Quick roll
+    * Advanced roll
+
+* <head>
+  * Add stuff here
+
+===============================================================================
+  Advanced rolls
+===============================================================================
+
+* Output
+  * Da li da postoji output za svaki korak operacije?
+
+* Advanced roll zero
+  * Da li bude dozvoljeno u segmentima?
+  * Ne?
+
+* Advanced rolls results
+  * Add controlls for
+    * "Allow negative result?"
+    * Allow zero
+    * Round up/down
+
+* Round
+  * Round up
+  * Round down
