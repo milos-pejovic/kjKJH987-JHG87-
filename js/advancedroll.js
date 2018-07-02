@@ -100,6 +100,31 @@ function fillInAllFieldsWarning() {
 
 /**
  * ==================================================================================================
+ * showResult
+ * ==================================================================================================
+ * @param {string} result 
+ */
+function showResult(result) {
+  var numberOfDecimals = $('.number-of-decimals').val();
+  var roundUp = $('.round-up').is(':checked');
+  var roundDown = $('.round-down').is(':checked'); 
+
+  if (isNaN(result)) {
+    $('.adv-roll-result p').html('/');
+  } else if (Number.isInteger(result)) {
+    $('.adv-roll-result p').html(parseInt(result));
+  } else {
+    if (roundUp) {
+      result = Math.ceil(result);
+    } else if (roundDown) {
+      result = Math.floor(result);
+    }
+    $('.adv-roll-result p').html(result.toFixed(numberOfDecimals));
+  }
+}
+
+/**
+ * ==================================================================================================
  * Advanced roll Roll button click event handler
  * ==================================================================================================
  */
@@ -143,15 +168,7 @@ $('.adv-roll-btn').on('click', function(){
     }
   }); // foreach END
 
-  // Result
-  if (isNaN(result)) {
-    $('.adv-roll-result p').html('Invalid result');
-  } else if (Number.isInteger(result)) {
-    $('.adv-roll-result p').html(parseInt(result));
-  } else {
-    $('.adv-roll-result p').html(result.toFixed(2));
-  }
-
+  showResult(result);
 });
 
 /**
@@ -192,4 +209,22 @@ $('.advanced-roll .clear-fields').on('click', function() {
     });
   }  
   clearAdvRes();
+});
+
+/**
+ * ==================================================================================================
+ * When "Round up" is selected "Round down" is deselected
+ * ==================================================================================================
+ */
+$('.round-up').on('input', function() {
+  $('.round-down').prop('checked', false);
+});
+
+/**
+ * ==================================================================================================
+ * When "Round down" is selected "Round up" is deselected
+ * ==================================================================================================
+ */
+$('.round-down').on('input', function() {
+  $('.round-up').prop('checked', false);
 });

@@ -58,8 +58,3 @@
   * Add controlls for
     * "Allow negative result?"
     * Allow zero
-    * Round up/down
-
-* Round
-  * Round up
-  * Round down

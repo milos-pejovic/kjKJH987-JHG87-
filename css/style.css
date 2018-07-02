@@ -53,8 +53,11 @@
 }
 
 .container .advanced-roll .math-controls,
-.container .advanced-roll .clear-controls {
+.container .advanced-roll .clear-controls,
+.container .advanced-roll .rounding-controls,
+.container .advanced-roll .number-of-decimals-control {
   display: inline-block;
+  margin: 0 5px;
 }
 
 .container .math-controls button {
@@ -132,4 +135,17 @@
 
 .container .advanced-roll .remove-all-segments {
   margin-left: 10px;
+}
+
+.container .rounding-controls label {
+  margin-bottom: 0;
+}
+
+.container .rounding-controls {
+  vertical-align: middle;
+}
+
+.container .number-of-decimals-control .number-of-decimals {
+  width: 50px;
+  text-align: center;
 }

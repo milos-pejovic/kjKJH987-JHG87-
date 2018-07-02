@@ -69,17 +69,29 @@
 								<button class="divide-number math-operation" data-operation="division"><i class="fas fa-divide"></i></button>							
 							</div><!-- math-operations END-->
 	
+							<div class="rounding-controls">
+								<label><input type="checkbox" class="round-up rounding-control" />Round up</label><br />
+								<label><input type="checkbox" class="round-down rounding-control" />Round down</label>
+							</div>
+
+							<div class="number-of-decimals-control">
+								<input type="number" min="1" max="10" class="number-of-decimals" value="2" /> Number of decimals
+							</div>
+
 							<div class="clear-controls">
 								<button class="remove-segments clear-control remove-all-segments">Remove all segments</button>
 								<button class="remove-segments clear-control clear-fields">Clear fields</button>
 							</div>
+
+							
+
 						</div><!-- controls END -->
 						
 						<div class="instructions">
 							<ul>
-								<li>Click on a mathematical operation to add segment.</li>
+								<li>Click on a mathematical operation above to add field.</li>
 								<li>Enter a number or dice definition (e.g. d20) in each field.</li>
-								<li>Operations are applied in the order defined in below <b><u>not</u></b> in mathematical order of operations.</li>
+								<li>Operations are applied in the order defined below <b><u>not</u></b> in mathematical order of operations.</li>
 							</ul>
 						</div><!-- instructions END -->
 
