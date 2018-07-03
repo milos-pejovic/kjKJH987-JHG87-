@@ -17,6 +17,10 @@
     * Quick roll
     * Advanced roll
 
+* Style
+  * Rezultat da bude upadljiviji
+  * Sva dugmad cursor: pointer;
+
 * <head>
   * Add stuff here
 
@@ -47,14 +51,11 @@
   Advanced rolls
 ===============================================================================
 
+* Style
+  * Rezultat na sredinu negde
+  * Roll dugme takodje
+
 * Output
   * Da li da postoji output za svaki korak operacije?
 
-* Advanced roll zero
-  * Da li bude dozvoljeno u segmentima?
-  * Ne?
-
-* Advanced rolls results
-  * Add controlls for
-    * "Allow negative result?"
-    * Allow zero
+* Polje sa mnozenjem zeza css.

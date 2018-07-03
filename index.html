@@ -14,7 +14,7 @@
 		</div><!-- row END -->
 
 		<div class="accordion">
-			<div class="card quick-role">
+			<div class="card quick-roll">
 				<a class="card-link" data-toggle="collapse" href="#collapseOne">
 					<div class="card-header">
 						<h3>Quick Roll</h3>
@@ -75,15 +75,13 @@
 							</div>
 
 							<div class="number-of-decimals-control">
-								<input type="number" min="1" max="10" class="number-of-decimals" value="2" /> Number of decimals
+								<input type="number" min="1" max="10" class="number-of-decimals" value="2" /> Number of decimals (max 10)
 							</div>
 
 							<div class="clear-controls">
-								<button class="remove-segments clear-control remove-all-segments">Remove all segments</button>
+								<button class="remove-segments clear-control remove-all-segments">Remove all fields</button>
 								<button class="remove-segments clear-control clear-fields">Clear fields</button>
 							</div>
-
-							
 
 						</div><!-- controls END -->
 						
@@ -100,12 +98,19 @@
 
 						<div class="work-area">
 							<div class="adv-roll-segment start-segment">
-								<input class="start-number" maxLength="4" max="9999" type="text">
+								<input class="start-number" maxLength="4" max="9999" type="text" value="d8">
+							</div>
+
+							<div class="adv-roll-segment" data-operation="addition">
+								<span><i class="fas fa-plus"></i></span> <input maxLength="4" max="9999" type="text" value="4">
+								<span class="close"><i class="fas fa-times"></i></span>
 							</div>
 						</div><!-- work-area END-->		
 
-						<button class="adv-roll-btn">Roll</button>
-
+						<div class="adv-roll-btn-wrap">
+							<button class="adv-roll-btn">Roll</button>
+						</div>
+						
 						<div class="adv-roll-result">
 							<p>0</p>
 						</div>
@@ -115,7 +120,7 @@
 			</div><!-- card END -->
 		
 			<div class="card presets">
-				<a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+				<!-- <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
 					<div class="card-header">
 						<h3>Presets</h3>
 					</div>
@@ -125,7 +130,7 @@
 					<div class="card-body">
 						Lorem ipsum..
 					</div>
-				</div>
+				</div> -->
 			</div><!-- card END -->
 		</div><!-- accordion END -->
 	</div><!-- container END -->

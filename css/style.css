@@ -11,6 +11,7 @@
 
 .container .make-custom-dice {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .container .dice-buttons button,
@@ -29,6 +30,10 @@
   margin-top: 10px;
 }
 
+.container .quick-roll .result-div {
+  text-align: center;
+}
+
 .container .result-div {
   margin-top: 50px
 }
@@ -36,6 +41,8 @@
 .container .result {
   font-size: 50px;
   font-weight: bold;
+  width: 100px;
+  display: inline-block;
 }
 
 .container .accordion .card-link {
@@ -71,6 +78,7 @@
 .container .clear-controls button {
   height: 40px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .container .advanced-roll .dice {
@@ -118,6 +126,7 @@
 
 .container .adv-roll-btn {
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 .container .advanced-roll .warnings li {
@@ -127,6 +136,10 @@
 .container .adv-roll-result {
   font-size: 50px;
   font-weight: bold;
+}
+
+.container .adv-roll-result p {
+  text-align: center;
 }
 
 .container .advanced-roll .start-segment {
@@ -139,6 +152,7 @@
 
 .container .rounding-controls label {
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .container .rounding-controls {
@@ -147,5 +161,9 @@
 
 .container .number-of-decimals-control .number-of-decimals {
   width: 50px;
+  text-align: center;
+}
+
+.adv-roll-btn-wrap {
   text-align: center;
 }

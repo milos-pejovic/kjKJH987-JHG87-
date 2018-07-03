@@ -100,26 +100,53 @@ function fillInAllFieldsWarning() {
 
 /**
  * ==================================================================================================
+ * Shows the result that is integer
+ * ==================================================================================================
+ * @param {integer} result 
+ */
+function showIntegerAdvancedResult(result) {
+  $('.adv-roll-result p').html(result);
+}
+
+/**
+ * ==================================================================================================
+ * Shows the result that is float
+ * ==================================================================================================
+ * @param {float} result 
+ */
+function showFloatAdvancedResult(result) {
+  var numberOfDecimals = $('.number-of-decimals').val();
+  if (numberOfDecimals > 10) {
+    numberOfDecimals = 10;
+  }
+  $('.adv-roll-result p').html(result.toFixed(numberOfDecimals));
+}
+
+/**
+ * ==================================================================================================
  * showResult
  * ==================================================================================================
  * @param {string} result 
  */
 function showResult(result) {
-  var numberOfDecimals = $('.number-of-decimals').val();
   var roundUp = $('.round-up').is(':checked');
   var roundDown = $('.round-down').is(':checked'); 
 
   if (isNaN(result)) {
     $('.adv-roll-result p').html('/');
   } else if (Number.isInteger(result)) {
-    $('.adv-roll-result p').html(parseInt(result));
+    result = Math.trunc(parseInt(result));
+    showIntegerAdvancedResult(result);
   } else {
     if (roundUp) {
-      result = Math.ceil(result);
+      result = Math.trunc(Math.ceil(result));
+      showIntegerAdvancedResult(result);
     } else if (roundDown) {
-      result = Math.floor(result);
+      result = Math.trunc(Math.floor(result));
+      showIntegerAdvancedResult(result);
+    } else {
+      showFloatAdvancedResult(result);
     }
-    $('.adv-roll-result p').html(result.toFixed(numberOfDecimals));
   }
 }
 
