@@ -2,24 +2,26 @@
   General
 ===============================================================================
 
+* Rolls
+  * Simple roll - dodati
+    * treshold
+    * crittical hit/miss 
+  * Oppposed roll
+  * Dice pool
+    * treshold
+    * crittical hit/miss
+
+* Pozadine
+  * Naci nove slike za pozadine
+
+* Zarsiti dizajn
+  * sidebar
+
 * Napraviti
   * Fold all / Expand all tabs ('Quick roll', 'Advanced roll', 'Presets')
 
-* All Buttons style
-  * Ujednaciti still dugmadi
-
 * Refresh preventer
   * Kao na Estimatoru
-
-* Comment css
-  * split css
-    * Main
-    * Quick roll
-    * Advanced roll
-
-* Style
-  * Rezultat da bude upadljiviji
-  * Sva dugmad cursor: pointer;
 
 * <head>
   * Add stuff here
@@ -51,11 +53,5 @@
   Advanced rolls
 ===============================================================================
 
-* Style
-  * Rezultat na sredinu negde
-  * Roll dugme takodje
-
 * Output
   * Da li da postoji output za svaki korak operacije?
-
-* Polje sa mnozenjem zeza css.

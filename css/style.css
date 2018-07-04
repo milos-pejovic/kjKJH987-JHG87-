@@ -1,22 +1,53 @@
+/**
+ * ====================================================================================
+ * General
+ * ====================================================================================
+ */
+
 * {
-  /* font-family: 'Baskerville Old Face'; */
-  /* font-family: 'Lucida Caligraphy'; */
-  font-family: 'Times New Roman';
+  font-family: 'Baskerville Old Face';
 }
+
+/**
+ * ====================================================================================
+ * Site general
+ * ====================================================================================
+ */
 
 .container .main-title {
   font-size: 70px;
   margin: 30px;
 }
 
+.container .accordion .card-link {
+  color: #000;
+  display: block;
+}
+
+.container .accordion .card-header {
+  background-color: #e2cec0;
+  background-image: url('../images/marble5.jpg');
+}
+
+.elements-repository {
+  display: none;
+}
+
+/**
+ * ====================================================================================
+ * Quick roll
+ * ====================================================================================
+ */
+
 .container .make-custom-dice {
   margin-bottom: 10px;
   cursor: pointer;
+  font-size: 16px;
+  padding: 5px 15px;
 }
 
 .container .dice-buttons button,
-.container .custom-dice-buttons button,
-.container .advanced-roll .dice button {
+.container .custom-dice-buttons button {
   width: 70px;
   height: 60px;
   border-radius: 25px;
@@ -45,27 +76,23 @@
   display: inline-block;
 }
 
-.container .accordion .card-link {
-  color: #000;
-  display: block;
+.container .result {
+  font-size: 70px;
 }
 
-.container .accordion .card-header {
-  background-color: #e2cec0;
-  background-image: url('../images/marble5.jpg');
-}
+/**
+ * ====================================================================================
+ * Advanced roll
+ * ====================================================================================
+ */
 
-.elements-repository {
-  display: none;
-}
-
-.container .advanced-roll .math-controls,
-.container .advanced-roll .clear-controls,
-.container .advanced-roll .rounding-controls,
-.container .advanced-roll .number-of-decimals-control {
-  display: inline-block;
-  margin: 0 5px;
-}
+ .container .advanced-roll .math-controls,
+ .container .advanced-roll .clear-controls,
+ .container .advanced-roll .rounding-controls,
+ .container .advanced-roll .number-of-decimals-control {
+   display: inline-block;
+   margin: 0 5px;
+ }
 
 .container .math-controls button {
   height: 40px;
@@ -77,8 +104,9 @@
 
 .container .clear-controls button {
   height: 40px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  padding: 5px 15px;
 }
 
 .container .advanced-roll .dice {
@@ -87,11 +115,6 @@
 
 .container .advanced-roll .controls {
   margin-bottom: 10px;
-}
-
-.container .work-area .start-number {
-  /* border: none;
-  border-bottom: 1px solid darkgray; */
 }
 
 .container .adv-roll-segment {
@@ -166,4 +189,12 @@
 
 .adv-roll-btn-wrap {
   text-align: center;
+}
+
+.container .adv-roll-result p {
+  font-size: 70px;
+}
+
+.container [data-operation="multiplication"] span i {
+  width: 17px;
 }
