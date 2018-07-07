@@ -1,16 +1,95 @@
 var existingDiceSizes = [2, 3, 4, 6, 8, 10, 12, 20, 30, 100];
+var currentQuickRollType = 'single-dice';
+
+addSingleDiceEventHandlers();
 
 /**
- * Dice buttons click event handler
+ * ==================================================================================================
+ * Add event handlers to all dice (including custom dice)
+ * ==================================================================================================
  */
-$('.dice-buttons button').on('click', function() {
-    var diceSize = $(this).attr('data-diceSize');
-    var result = roll(parseInt(diceSize));
-    $('.result').html(result);
+function addEventHandlersToAllDice() {
+    if (currentQuickRollType == 'single-dice') {
+        addSingleDiceEventHandlers();
+    } else if (currentQuickRollType == 'opposed-roll') {
+        addOpposedRollEventHandlers();
+    }
+}
+
+/**
+ * ==================================================================================================
+ * Quick roll type of roll buttons click event handler
+ * ==================================================================================================
+ */
+$('.quick-roll-types button').on('click', function() {
+    $('.quick-roll-results > div').hide();
+    $('.quick-roll-results > div[data-roll-type="'+$(this).attr('data-roll-type')+'"]').show();
 });
 
 /**
+ * ==================================================================================================
+ * Adds Dice button functionality for Single Dice
+ * ==================================================================================================
+ */
+function addSingleDiceEventHandlers() {
+    $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
+    $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
+        var diceSize = $(this).attr('data-diceSize');
+        var result = roll(parseInt(diceSize));
+        $('.result').html(result);
+    });
+    currentQuickRollType = 'single-dice';
+}
+
+/**
+ * ==================================================================================================
+ * Adds Dice button functionality for Single Dice
+ * ==================================================================================================
+ */
+function addOpposedRollEventHandlers() {
+    $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
+    $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
+        var diceSize = $(this).attr('data-dicesize');
+        var element = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
+        $('.left-dice-wrapper .left-dice').html(element);
+        rollOpposedDice();
+    });
+
+    $('.dice-buttons button, .custom-dice-buttons button').on('contextmenu', function(e) {
+        e.preventDefault();
+        var diceSize = $(this).attr('data-dicesize');
+        var element = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
+        $('.right-dice-wrapper .right-dice').html(element);
+        rollOpposedDice();
+    });
+
+    currentQuickRollType = 'opposed-roll';
+}
+
+/**
+ * ==================================================================================================
+ * "Single dice" click event handler
+ * ==================================================================================================
+ */
+$('.quick-roll-types .single-dice').on('click', function() {
+    $('.opposed-roll-instructions').hide();
+    addSingleDiceEventHandlers();
+});
+
+/**
+ * ==================================================================================================
+ * "Oppsoed roll" click event handler
+ * ==================================================================================================
+ */
+$('.quick-roll-types .opposed-roll').on('click', function() {
+    $('.opposed-roll-instructions').show();
+    addOpposedRollEventHandlers();
+});
+
+/**
+ * ==================================================================================================
  * Make custom dice
+ * ==================================================================================================
  */
 $('.make-custom-dice').on('click', function(){
     var diceSidesNumber = prompt('How many sides should the dice have?');
@@ -38,4 +117,29 @@ $('.make-custom-dice').on('click', function(){
     $('.custom-dice-buttons [class="custom-dice-' + diceSidesNumber + '"]').on('click', function() {
         $('.result').html(roll(diceSidesNumber));
     });
+
+    addEventHandlersToAllDice();
 });
+
+/**
+ * ==================================================================================================
+ * Roll selected opposed dice
+ * ==================================================================================================
+ */
+function rollOpposedDice() {
+    var leftDiceSize = $('.left-dice button').attr('data-dicesize');
+    var rightDiceSize = $('.right-dice button').attr('data-dicesize');
+    var leftResult = roll(leftDiceSize);
+    var rightResult = roll(rightDiceSize);
+    $('.opposed-roll-results .left-result').html(leftResult);
+    $('.opposed-roll-results .right-result').html(rightResult);
+}
+
+/**
+ * ==================================================================================================
+ * Opposed roll added buttons click handler
+ * ==================================================================================================
+ */
+$('.opposed-roll-results').delegate('.left-dice button, .right-dice button', 'click', function() {
+    rollOpposedDice();
+})

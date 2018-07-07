@@ -2,6 +2,11 @@
   General
 ===============================================================================
 
+* "Advanced roll" - click pomera sve u desno/levo
+
+* "Opposed roll" instruckije
+  * "Opposed roll" instruckije pomeriti desno od Roll type buttons
+
 * Rolls
   * Simple roll - dodati
     * treshold
@@ -30,9 +35,6 @@
   Quick roll
 ===============================================================================
 
-* "Make custom dice"
-  * Kad se ukuca npr "7d" ne napravi se kocka, ali se registruje kao da je narpavljena. Ako se proba ponovo sa "7" (ovo ce biti validan unos) kazace "Dice already exists."
-
 * Custom dice 0
   * Onemoguciti
 
@@ -48,6 +50,9 @@
   
 * Range
   * Kod custom dice da bude i opcija za "Range" npr 3-17
+
+* Delete custom dice
+  * Delete custom dice without refreshing the page?
 
 ===============================================================================
   Advanced rolls

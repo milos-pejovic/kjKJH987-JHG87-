@@ -24,8 +24,21 @@
 				<div id="collapseOne" class="collapse show" data-parent="#accordion">
 					<div class="card-body">
 
+						<div class="quick-roll-types">
+							<button class="single-dice" data-roll-type="single-dice">Single dice</button>
+							<button class="opposed-roll" data-roll-type="opposed-roll">Opposed roll</button>
+							<button class="dice-pool" data-roll-type="dice-pool">Dice pool</button>
+						</div>
+
 						<div class="commands">
 							<button class="make-custom-dice">Make custom dice</button>
+						</div>
+
+						<div class="opposed-roll-instructions">
+							<ul>
+								<li>Click on a dice (left click or right click) to add it.</li>
+								<li>Click on a dice again or on an added dice to roll.</li>
+							</ul>
 						</div>
 
 						<div class="dice-buttons text-center">
@@ -44,8 +57,29 @@
 						<div class="custom-dice-buttons text-center">	
 						</div>
 						
-						<div class="result-div">
-							<p class="result text-center">0</p>
+						<div class="quick-roll-results">
+							<div class="single-dice-result-div" data-roll-type="single-dice">
+								<p class="result text-center">0</p>
+							</div>
+
+							<!-- Opposed roll -->
+
+							<div class="opposed-roll-results" data-roll-type="opposed-roll">
+								<div class="left-dice-wrapper">
+									<div class="left-dice"><button data-diceSize="20">d20</button></div>
+									<div class="left-result">0</div>
+								</div>
+
+								<div class="opposed-roll-vs-wrap">
+									<p class="opposed-roll-vs">VS</p>
+								</div>
+
+								<div class="right-dice-wrapper">
+									<div class="right-dice"><button data-diceSize="20">d20</button></div>
+									<div class="right-result">0</div>
+								</div>	
+							</div><!-- opposed-roll-results END -->
+
 						</div>
 					</div>
 				</div>

@@ -35,11 +35,12 @@
 
 /**
  * ====================================================================================
- * Quick roll
+ * Quick roll - general and single dice roll
  * ====================================================================================
  */
 
-.container .make-custom-dice {
+.container .make-custom-dice,
+.quick-roll-types button {
   margin-bottom: 10px;
   cursor: pointer;
   font-size: 16px;
@@ -47,7 +48,9 @@
 }
 
 .container .dice-buttons button,
-.container .custom-dice-buttons button {
+.container .custom-dice-buttons button,
+.container .left-dice button,
+.container .right-dice button {
   width: 70px;
   height: 60px;
   border-radius: 25px;
@@ -61,11 +64,11 @@
   margin-top: 10px;
 }
 
-.container .quick-roll .result-div {
+.container .quick-roll .single-dice-result-div {
   text-align: center;
 }
 
-.container .result-div {
+.container .single-dice-result-div {
   margin-top: 50px
 }
 
@@ -78,6 +81,66 @@
 
 .container .result {
   font-size: 70px;
+}
+
+/**
+ * ====================================================================================
+ * Quick roll - Opposed roll
+ * ====================================================================================
+ */
+
+.opposed-roll-results {
+  display: none;
+  text-align: center;
+}
+
+.left-dice-wrapper {
+  margin-top: 30px;
+}
+
+.opposed-roll-results .left-dice-wrapper,
+.opposed-roll-results .opposed-roll-vs-wrap,
+.opposed-roll-results .right-dice-wrapper {
+  display: inline-block;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice,
+.opposed-roll-results .right-dice-wrapper .right-dice {
+  /* border: 1px solid black; */
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice button,
+.opposed-roll-results .right-dice-wrapper .right-dice button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 14px;
+}
+
+.opposed-roll-results .opposed-roll-vs-wrap {
+  position: relative;
+}
+
+.opposed-roll-results .opposed-roll-vs-wrap p {
+  position: relative;
+  top: -113px;
+  font-size: 50px;
+  margin: 0 10px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-result,
+.opposed-roll-results .right-dice-wrapper .right-result {
+  margin-top: 10px;
+  font-size: 70px;
+}
+
+.opposed-roll-instructions {
+  display: none;
 }
 
 /**
