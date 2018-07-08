@@ -2,11 +2,17 @@
   General
 ===============================================================================
 
-* d100
-  * druga nula hoce da pobegne dole na nekim velicinama i browserima (Firefox)
+* Roll history
+  * Priakzuje poslednjih x rollova
 
 * Testirati
-  * Testira na drugim browserima
+  * Testirati na drugim browserima
+  * Internet Explorer
+    * Advanced roll Roll button ne radi
+    * Ukljanjanje svih polja naadvanced roll ne radi
+    * Scrollbar je i dalje tu kad se sve otvori
+  * Firefox
+    * Scrollbar je i dalje tu kad se sve otvori
 
 * "Advanced roll" - click pomera sve u desno/levo
 

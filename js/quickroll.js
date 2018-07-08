@@ -2,7 +2,7 @@ var existingDiceSizes = [2, 3, 4, 6, 8, 10, 12, 20, 30, 100];
 var currentQuickRollType = 'single-dice';
 
 addSingleDiceEventHandlers();
-
+// document.body.style.overflow = 'hidden';
 /**
  * ==================================================================================================
  * Add event handlers to all dice (including custom dice)
@@ -33,6 +33,7 @@ $('.quick-roll-types button').on('click', function() {
  */
 function addSingleDiceEventHandlers() {
     $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
+    $('.dice-buttons button, .custom-dice-buttons button').unbind('contextmenu');
     $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
         var diceSize = $(this).attr('data-diceSize');
         var result = roll(parseInt(diceSize));
@@ -43,11 +44,12 @@ function addSingleDiceEventHandlers() {
 
 /**
  * ==================================================================================================
- * Adds Dice button functionality for Single Dice
+ * Adds Dice button functionality for Opposed Roll
  * ==================================================================================================
  */
 function addOpposedRollEventHandlers() {
     $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
+    $('.dice-buttons button, .custom-dice-buttons button').unbind('contextmenu');
     $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
         var diceSize = $(this).attr('data-dicesize');
         var element = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
@@ -143,3 +145,23 @@ function rollOpposedDice() {
 $('.opposed-roll-results').delegate('.left-dice button, .right-dice button', 'click', function() {
     rollOpposedDice();
 })
+
+
+
+
+
+
+setAccordionHeight();
+
+function setAccordionHeight() {
+    var height = $('.accordion .quick-roll').height() + $('.accordion .advanced-roll').height();
+    $('.accordion').height(height + 900);   
+}
+
+
+
+$('.accordion .quick-roll, .accordion .advanced-roll').on('mresize', function() {
+    setAccordionHeight();
+}).each(function(){
+    $(this).data("mresize").throttle=0;
+});

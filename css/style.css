@@ -8,15 +8,18 @@
   font-family: 'Baskerville Old Face';
 }
 
-/* An attempt to fix moving everything when both tabs are open */
-
-/* body, body.modal {
-  margin-right: 0 !important;
+.accordion {
+  /* height: 1000px; */
+  background-color: green;
 }
 
-body.modal {
-  overflow-y: hidden;
-} */
+html {
+  /* overflow: visible; */
+}
+
+html::-webkit-scrollbar {
+  /* width: 0 !important; */
+}
 
 /**
  * ====================================================================================
@@ -61,13 +64,14 @@ body.modal {
 .container .custom-dice-buttons button,
 .container .left-dice button,
 .container .right-dice button {
-  width: 70px;
+  width: 84px;
   height: 60px;
   border-radius: 25px;
   font-size: 26px;
   font-weight: bold;
   background-image: url('../images/marble1.jpg');
   cursor: pointer;
+  overflow: visible;
 }
 
 .container .custom-dice-buttons {
@@ -85,7 +89,7 @@ body.modal {
 .container .result {
   font-size: 50px;
   font-weight: bold;
-  width: 100px;
+  width: 145px;
   display: inline-block;
 }
 
@@ -181,9 +185,9 @@ body.modal {
   padding: 5px 15px;
 }
 
-.container .advanced-roll .dice {
+/* .container .advanced-roll .dice {
   margin-bottom: 20px;
-}
+} */
 
 .container .advanced-roll .controls {
   margin-bottom: 10px;
