@@ -2,6 +2,12 @@
   General
 ===============================================================================
 
+* d100
+  * druga nula hoce da pobegne dole na nekim velicinama i browserima (Firefox)
+
+* Testirati
+  * Testira na drugim browserima
+
 * "Advanced roll" - click pomera sve u desno/levo
 
 * "Opposed roll" instruckije

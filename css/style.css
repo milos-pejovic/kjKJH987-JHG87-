@@ -8,6 +8,16 @@
   font-family: 'Baskerville Old Face';
 }
 
+/* An attempt to fix moving everything when both tabs are open */
+
+/* body, body.modal {
+  margin-right: 0 !important;
+}
+
+body.modal {
+  overflow-y: hidden;
+} */
+
 /**
  * ====================================================================================
  * Site general
@@ -106,7 +116,6 @@
 
 .opposed-roll-results .left-dice-wrapper .left-dice,
 .opposed-roll-results .right-dice-wrapper .right-dice {
-  /* border: 1px solid black; */
   padding: 10px;
   width: 100px;
   height: 100px;
