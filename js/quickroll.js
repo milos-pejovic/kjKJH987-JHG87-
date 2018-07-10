@@ -2,7 +2,8 @@ var existingDiceSizes = [2, 3, 4, 6, 8, 10, 12, 20, 30, 100];
 var currentQuickRollType = 'single-dice';
 
 addSingleDiceEventHandlers();
-// document.body.style.overflow = 'hidden';
+setAccordionHeight();
+
 /**
  * ==================================================================================================
  * Add event handlers to all dice (including custom dice)
@@ -75,17 +76,30 @@ function addOpposedRollEventHandlers() {
  */
 $('.quick-roll-types .single-dice').on('click', function() {
     $('.opposed-roll-instructions').hide();
+    $('.dice-pool-work-area').hide();
     addSingleDiceEventHandlers();
 });
 
 /**
  * ==================================================================================================
- * "Oppsoed roll" click event handler
+ * "Opposed roll" click event handler
  * ==================================================================================================
  */
 $('.quick-roll-types .opposed-roll').on('click', function() {
     $('.opposed-roll-instructions').show();
+    $('.dice-pool-work-area').hide();
     addOpposedRollEventHandlers();
+});
+
+/**
+ * ==================================================================================================
+ * "Dice pool" click event handler
+ * ==================================================================================================
+ */
+$('.quick-roll-types .dice-pool').on('click', function() {
+    $('.opposed-roll-instructions').hide();
+    $('.dice-pool-work-area').show();
+
 });
 
 /**
@@ -146,20 +160,32 @@ $('.opposed-roll-results').delegate('.left-dice button, .right-dice button', 'cl
     rollOpposedDice();
 })
 
-
-
-
-
-
-setAccordionHeight();
-
+/**
+ * ==================================================================================================
+ * Set accordion height
+ * ==================================================================================================
+ * Give accordion fixed height. If combined heights of all cards are rgeated than fixed value, use that sum instead. 
+ */
 function setAccordionHeight() {
-    var height = $('.accordion .quick-roll').height() + $('.accordion .advanced-roll').height();
-    $('.accordion').height(height + 900);   
+    var accordionHeight = 1000;
+    var allCardsHeight = 0;
+    
+    $('.accordion .card').each(function() {
+        allCardsHeight += $(this).height();
+    });
+
+    if (allCardsHeight > accordionHeight){
+        $('.accordion').height(allCardsHeight);
+    } else {
+        $('.accordion').height(accordionHeight);
+    }
 }
 
-
-
+/**
+ * ==================================================================================================
+ * On each card expand set the accordion height again.
+ * ==================================================================================================
+ */
 $('.accordion .quick-roll, .accordion .advanced-roll').on('mresize', function() {
     setAccordionHeight();
 }).each(function(){

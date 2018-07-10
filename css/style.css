@@ -8,19 +8,6 @@
   font-family: 'Baskerville Old Face';
 }
 
-.accordion {
-  /* height: 1000px; */
-  background-color: green;
-}
-
-html {
-  /* overflow: visible; */
-}
-
-html::-webkit-scrollbar {
-  /* width: 0 !important; */
-}
-
 /**
  * ====================================================================================
  * Site general
@@ -97,6 +84,10 @@ html::-webkit-scrollbar {
   font-size: 70px;
 }
 
+.quick-roll .dice-buttons button {
+  margin-bottom: 10px;
+}
+
 /**
  * ====================================================================================
  * Quick roll - Opposed roll
@@ -153,6 +144,10 @@ html::-webkit-scrollbar {
 }
 
 .opposed-roll-instructions {
+  display: none;
+}
+
+.dice-pool-work-area {
   display: none;
 }
 

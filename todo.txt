@@ -2,6 +2,14 @@
   General
 ===============================================================================
 
+* Responsive za telefone
+
+* Opposed roll right click
+  * desno dugme na vec izabrane kcoke takodje radi roll obe izabrane kocke 
+
+* Advanced roll
+  * kad ima samo "d" ukucano da da upozorenje
+
 * Roll history
   * Priakzuje poslednjih x rollova
 
