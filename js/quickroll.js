@@ -14,6 +14,8 @@ function addEventHandlersToAllDice() {
         addSingleDiceEventHandlers();
     } else if (currentQuickRollType == 'opposed-roll') {
         addOpposedRollEventHandlers();
+    } else if (currentQuickRollType == 'dice-pool') {
+        addDicePollEventHandlers();
     }
 }
 
@@ -71,6 +73,23 @@ function addOpposedRollEventHandlers() {
 
 /**
  * ==================================================================================================
+ * Adds Dice button functionality for DicePool
+ * ==================================================================================================
+ */
+function addDicePollEventHandlers() {
+    $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
+    $('.dice-buttons button, .custom-dice-buttons button').unbind('contextmenu');
+
+    $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
+        var diceSize = $(this).attr('data-dicesize');
+        var newElement = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
+        $('.dice-pool-work-area .chosen-dice').html(newElement);
+    });
+    currentQuickRollType = 'dice-pool';
+}
+
+/**
+ * ==================================================================================================
  * "Single dice" click event handler
  * ==================================================================================================
  */
@@ -89,6 +108,17 @@ $('.quick-roll-types .opposed-roll').on('click', function() {
     $('.opposed-roll-instructions').show();
     $('.dice-pool-work-area').hide();
     addOpposedRollEventHandlers();
+});
+
+/**
+ * ==================================================================================================
+ * "Dice pool" click event handler
+ * ==================================================================================================
+ */
+$('.quick-roll-types .dice-pool').on('click', function() {
+    $('.opposed-roll-instructions').hide();
+    $('.dice-pool-work-area').hide();
+    addDicePollEventHandlers();
 });
 
 /**
@@ -191,3 +221,55 @@ $('.accordion .quick-roll, .accordion .advanced-roll').on('mresize', function() 
 }).each(function(){
     $(this).data("mresize").throttle=0;
 });
+
+/**
+ * ==================================================================================================
+ * Limit number of dice for dice pool
+ * ==================================================================================================
+ */
+$('#how-many-dice-input, #crittical-hit-treshold, #success-treshold, #crittical-miss-treshold').on('input', function() {
+    if (Number.parseInt($(this).val()) > 1000) {
+        $(this).val('1000');
+    }
+
+    if (Number.parseInt($(this).val()) < 0) {
+        $(this).val('0');
+    }
+});
+
+/**
+ * 
+ */
+function x() {
+    var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
+    var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
+    var successTreshold = parseInt($('#success-treshold').val());
+    var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());
+
+    var errors = [];
+
+    if (critticalHitTreshold > diceSize) {
+        errors.push('Crittical hit treshold must be equal to or lower than dice size.');
+    }
+
+    if (critticalHitTreshold < successTreshold) {
+        errors.push('Crittical hit treshold must be equal to or higher than success treshold.');
+    }
+
+    if (successTreshold > diceSize) {
+        errors.push('Success treshold must be equal to or lower than dice size.');
+    }
+
+    if (critticalMissTreshold >= diceSize || critticalMissTreshold >= critticalHitTreshold) {
+        errors.push('Crittical miss treshold must be lower than success and crittical hit tresholds');
+    }
+
+    if (errors.length > 0) {
+        for (var i = 0; i < errors.length; i++) {
+            console.log(errors[i]);
+        }
+    }
+
+}
+
+x();

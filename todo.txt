@@ -2,6 +2,9 @@
   General
 ===============================================================================
 
+* Custom dice limit
+  * Stavi limit npr 1000 ili 9999
+
 * Responsive za telefone
 
 * Opposed roll right click

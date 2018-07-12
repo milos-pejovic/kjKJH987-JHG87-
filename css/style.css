@@ -50,7 +50,8 @@
 .container .dice-buttons button,
 .container .custom-dice-buttons button,
 .container .left-dice button,
-.container .right-dice button {
+.container .right-dice button,
+.dice-pool-work-area .chosen-dice button {
   width: 84px;
   height: 60px;
   border-radius: 25px;
@@ -86,6 +87,20 @@
 
 .quick-roll .dice-buttons button {
   margin-bottom: 10px;
+}
+
+.dice-pool-work-area .column-one,
+.dice-pool-work-area .column-two {
+  display: inline-block;
+}
+
+.dice-pool-tresholds span {
+  display: inline-block;
+  width: 140px;
+}
+
+.dice-pool-tresholds input {
+  width: 52px;
 }
 
 /**
@@ -149,6 +164,7 @@
 
 .dice-pool-work-area {
   display: none;
+  margin-top: 20px;
 }
 
 /**

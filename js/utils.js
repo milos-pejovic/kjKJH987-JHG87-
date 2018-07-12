@@ -41,3 +41,11 @@ function arrand(arr) {
 function roll(diceSize) {
 	return rand(diceSize);
 }
+
+/**
+ * Consol logs the type ov a variable and its value
+ * @param {*} x 
+ */
+function cl(x) {
+	console.log('Type: ' + typeof(x) + '\nValue: ' + x);
+}
