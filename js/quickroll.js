@@ -238,21 +238,35 @@ $('#how-many-dice-input, #crittical-hit-treshold, #success-treshold, #crittical-
 });
 
 /**
- * 
+ * ==================================================================================================
+ * Validate dice pool entries
+ * ==================================================================================================
+ * @param {int} diceSize 
+ * @param {int} critticalHitTreshold 
+ * @param {int} successTreshold 
+ * @param {int} critticalMissTreshold 
+ * @return boolean
  */
-function x() {
-    var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
-    var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
-    var successTreshold = parseInt($('#success-treshold').val());
-    var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());
+function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold) {
+    // console.log('Validate dice pool entries.');
+    // var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
+    // var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
+    // var successTreshold = parseInt($('#success-treshold').val());
+    // var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());
 
+    var errorsUlElement = $('.dice-pool-work-area .warnings .warnings-list');
     var errors = [];
+    var errorsHtml = '';
 
-    if (critticalHitTreshold > diceSize) {
+    var fieldEntriesValid = true;
+
+    errorsUlElement.html('');
+
+    if (critticalHitTreshold != '' && critticalHitTreshold > diceSize) {
         errors.push('Crittical hit treshold must be equal to or lower than dice size.');
     }
 
-    if (critticalHitTreshold < successTreshold) {
+    if (critticalHitTreshold != '' && critticalHitTreshold < successTreshold) {
         errors.push('Crittical hit treshold must be equal to or higher than success treshold.');
     }
 
@@ -260,16 +274,77 @@ function x() {
         errors.push('Success treshold must be equal to or lower than dice size.');
     }
 
-    if (critticalMissTreshold >= diceSize || critticalMissTreshold >= critticalHitTreshold) {
-        errors.push('Crittical miss treshold must be lower than success and crittical hit tresholds');
+    if (critticalMissTreshold != '' && (critticalMissTreshold >= diceSize || critticalMissTreshold >= critticalHitTreshold)) {
+        errors.push('Crittical miss treshold must be lower than success and crittical hit tresholds.');
     }
 
     if (errors.length > 0) {
         for (var i = 0; i < errors.length; i++) {
-            console.log(errors[i]);
+            errorsHtml += '<li>'+errors[i]+'</li>';
         }
+        errorsUlElement.html(errorsHtml);
+        fieldEntriesValid = false;
     }
-
+    return fieldEntriesValid;
 }
 
-x();
+/**
+ * ==================================================================================================
+ * Roll dice pool
+ * ==================================================================================================
+ * @param {int} diceSize 
+ * @param {int} critticalHitTreshold 
+ * @param {int} successTreshold 
+ * @param {int} critticalMissTreshold 
+ */
+function rollDicePool(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold) {
+    var numberOfDice = parseInt($('#how-many-dice-input').val()); 
+    var critticalHits= [];
+    var regularSuccess = [];
+    var regularFailure = [];
+    var critticalFailure = [];
+
+    cl(critticalHitTreshold);
+    cl(successTreshold);
+    cl(critticalMissTreshold);
+
+
+    for (var i = 0; i < numberOfDice; i++) {
+        var rollResult = roll(diceSize);
+
+        if (rollResult >= successTreshold) {
+            regularSuccess.push(rollResult);
+        } else {
+            regularFailure.push(rollResult);
+        }
+
+    }
+
+    regularSuccess.sort().reverse();
+    regularFailure.sort().reverse();
+
+    console.log(regularSuccess);
+    console.log(regularFailure);
+}
+
+/**
+ * ==================================================================================================
+ * Dice pool chosen dice click handler
+ * ==================================================================================================
+ */
+$('.dice-pool-work-area .chosen-dice').delegate('button', 'click', function() {
+    var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
+    var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
+    var successTreshold = parseInt($('#success-treshold').val());
+    var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());
+
+    var fieldsValid = validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold);
+
+    if (fieldsValid) {
+        rollDicePool(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold);
+    } else {
+        // fields not valid
+    }
+
+    
+});

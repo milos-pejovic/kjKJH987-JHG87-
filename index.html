@@ -104,17 +104,51 @@
 
 										<div class="column-two">
 											<div class="dice-pool-tresholds">
-												<span class="treshold-crittical-hit-label">Crittical hit treshold</span> <input type="number" min="1" id="crittical-hit-treshold" /><br />
-												<span class="treshold-success-label">Success treshold</span> <input type="number" min="1" id="success-treshold" /><br />
-												<span class="treshold-crittical-miss-label">Crittical miss treshold</span> <input type="number" min="1" id="crittical-miss-treshold" />
+												<span class="treshold-crittical-hit-label">Crittical hit treshold</span> <input type="number" min="1" id="crittical-hit-treshold" value="9" /><br />
+												<span class="treshold-success-label">Success treshold</span> <input type="number" min="1" id="success-treshold" value="6" /><br />
+												<span class="treshold-crittical-miss-label">Crittical miss treshold</span> <input type="number" min="1" id="crittical-miss-treshold" value="1" />
 											</div>
 										</div>
 
-										
-										
-										
+										<div class="warnings">
+											<ul class="warnings-list">
+											</ul>
+										</div>
+
+										<div class="dice-pool-results">
+											<table border="1px">
+
+												<!-- Success -->
+
+												<tr>
+
+													<td rowspan="2">Success <span class="success-total-span">(0)</span></td>
+													<td>Crittical <span class="crittical-success-span">(0)</span></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Regular <span class="regular-total-span">(0)</span></td>
+													<td></td>
+												</tr>
+
+												<!-- Failure -->
+
+												<tr>
+														<td rowspan="2">Failure <span class="failure-total-span">(0)</span></td>
+														<td>Regular <span class="regular-failure-span">(0)</span></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td>Crittical <span class="crittical-failure-span">(0)</span></td>
+														<td></td>
+													</tr>
+
+											</table>
+										</div>
 
 									</div><!-- dice-pool-work-area END -->
+
+									
 
 								</div>
 							</div>

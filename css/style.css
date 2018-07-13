@@ -167,6 +167,21 @@
   margin-top: 20px;
 }
 
+.dice-pool-work-area .warnings .warnings-list {
+  margin-top: 10px;
+	color: red
+}
+
+/* Dice pool results */
+
+.dice-pool-work-area table {
+  font-size: 30px;
+}
+
+.dice-pool-work-area table td {
+  padding: 10px;
+}
+
 /**
  * ====================================================================================
  * Advanced roll
