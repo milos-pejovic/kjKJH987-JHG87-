@@ -27,7 +27,7 @@ function capitalF(string) {
 }
 
 /**
- * Return random array array element
+ * Return random array element
  * @param {array} arr 
  */
 function arrand(arr) {
@@ -43,9 +43,19 @@ function roll(diceSize) {
 }
 
 /**
- * Consol logs the type ov a variable and its value
+ * Console logs the type of a variable and its value
  * @param {*} x 
  */
 function cl(x) {
 	console.log('Type: ' + typeof(x) + '\nValue: ' + x);
+}
+
+/**
+ * Used for sorting an array of numbers
+ * @param {int} a 
+ * @param {int} b 
+ */
+function compareNumbers(a, b)
+{
+    return a - b;
 }

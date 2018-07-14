@@ -95,6 +95,7 @@ function addDicePollEventHandlers() {
  */
 $('.quick-roll-types .single-dice').on('click', function() {
     $('.opposed-roll-instructions').hide();
+    $('.dice-pool-instructions').hide();
     $('.dice-pool-work-area').hide();
     addSingleDiceEventHandlers();
 });
@@ -107,6 +108,7 @@ $('.quick-roll-types .single-dice').on('click', function() {
 $('.quick-roll-types .opposed-roll').on('click', function() {
     $('.opposed-roll-instructions').show();
     $('.dice-pool-work-area').hide();
+    $('.dice-pool-instructions').hide();
     addOpposedRollEventHandlers();
 });
 
@@ -118,6 +120,7 @@ $('.quick-roll-types .opposed-roll').on('click', function() {
 $('.quick-roll-types .dice-pool').on('click', function() {
     $('.opposed-roll-instructions').hide();
     $('.dice-pool-work-area').hide();
+    $('.dice-pool-instructions').show();
     addDicePollEventHandlers();
 });
 
@@ -248,19 +251,18 @@ $('#how-many-dice-input, #crittical-hit-treshold, #success-treshold, #crittical-
  * @return boolean
  */
 function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold) {
-    // console.log('Validate dice pool entries.');
-    // var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
-    // var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
-    // var successTreshold = parseInt($('#success-treshold').val());
-    // var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());
-
     var errorsUlElement = $('.dice-pool-work-area .warnings .warnings-list');
     var errors = [];
     var errorsHtml = '';
-
     var fieldEntriesValid = true;
 
     errorsUlElement.html('');
+
+    // Validate fields
+
+    if (successTreshold !== '') {
+        errors.push('Please enter success treshold.');
+    }
 
     if (critticalHitTreshold != '' && critticalHitTreshold > diceSize) {
         errors.push('Crittical hit treshold must be equal to or lower than dice size.');
@@ -278,6 +280,7 @@ function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold
         errors.push('Crittical miss treshold must be lower than success and crittical hit tresholds.');
     }
 
+    // Handle errors
     if (errors.length > 0) {
         for (var i = 0; i < errors.length; i++) {
             errorsHtml += '<li>'+errors[i]+'</li>';
@@ -285,6 +288,7 @@ function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold
         errorsUlElement.html(errorsHtml);
         fieldEntriesValid = false;
     }
+
     return fieldEntriesValid;
 }
 
@@ -299,32 +303,78 @@ function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold
  */
 function rollDicePool(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold) {
     var numberOfDice = parseInt($('#how-many-dice-input').val()); 
-    var critticalHits= [];
-    var regularSuccess = [];
-    var regularFailure = [];
-    var critticalFailure = [];
+    var critticalSuccesses = [];
+    var regularSuccesses = [];
+    var regularFailures = [];
+    var critticalFailures = [];
 
-    cl(critticalHitTreshold);
-    cl(successTreshold);
-    cl(critticalMissTreshold);
-
-
+    // Roll dice
     for (var i = 0; i < numberOfDice; i++) {
         var rollResult = roll(diceSize);
 
-        if (rollResult >= successTreshold) {
-            regularSuccess.push(rollResult);
+        if (critticalHitTreshold != NaN && rollResult >= critticalHitTreshold) {
+            critticalSuccesses.push(rollResult);
+        } else if (rollResult >= successTreshold) {
+            regularSuccesses.push(rollResult);
+        } else if (critticalMissTreshold != NaN && rollResult <= critticalMissTreshold) {
+            critticalFailures.push(rollResult);
         } else {
-            regularFailure.push(rollResult);
+            regularFailures.push(rollResult);
         }
-
     }
 
-    regularSuccess.sort().reverse();
-    regularFailure.sort().reverse();
+    // Sort results
+    critticalSuccesses.sort(compareNumbers).reverse();
+    regularSuccesses.sort(compareNumbers).reverse();
+    regularFailures.sort(compareNumbers).reverse();
+    critticalFailures.sort(compareNumbers).reverse();
 
-    console.log(regularSuccess);
-    console.log(regularFailure);
+    // Display results
+    dispalyDicePollResults(critticalSuccesses, regularSuccesses, regularFailures, critticalFailures);
+}
+
+/**
+ * ==================================================================================================
+ * Displays dice pool results
+ * ==================================================================================================
+ * @param {int} critticalSuccesses 
+ * @param {int} regularSuccesses 
+ * @param {int} regularFailures 
+ * @param {int} critticalFailures 
+ */
+function dispalyDicePollResults(critticalSuccesses, regularSuccesses, regularFailures, critticalFailures) {
+    var critticalSuccessesHtmlResult = '';
+    var regularSuccessesHtmlResult = '';
+    var regularFailuresHtmlResult = '';
+    var critticalFailuresHtmlResult = '';
+
+    if (critticalSuccesses.length > 0) {
+        critticalSuccessesHtmlResult = critticalSuccesses.join(', ');
+    }
+
+    if (regularSuccesses.length > 0) {
+        regularSuccessesHtmlResult = regularSuccesses.join(', ');
+    }
+
+    if (regularFailures.length > 0) {
+        regularFailuresHtmlResult = regularFailures.join(', ');
+    }
+
+    if (critticalFailures.length > 0) {
+        critticalFailuresHtmlResult = critticalFailures.join(', ');
+    }
+
+    $('.crittical-successes-results-field').html(critticalSuccessesHtmlResult);
+    $('.regular-successes-results-field').html(regularSuccessesHtmlResult);
+    $('.regular-failures-results-field').html(regularFailuresHtmlResult);
+    $('.crittical-failures-results-field').html(critticalFailuresHtmlResult);
+
+    $('.success-total-span').html('(' + (critticalSuccesses.length + regularSuccesses.length) + ')');
+    $('.crittical-success-span').html('(' + critticalSuccesses.length + ')');
+    $('.regular-total-span').html('(' + regularSuccesses.length + ')');
+    $('.failure-total-span').html('(' + (regularFailures.length + critticalFailures.length)  + ')');
+    $('.regular-failure-span').html('(' + regularFailures.length + ')');
+    $('.crittical-failure-span').html('(' + critticalFailures.length + ')');
 }
 
 /**
@@ -337,14 +387,9 @@ $('.dice-pool-work-area .chosen-dice').delegate('button', 'click', function() {
     var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
     var successTreshold = parseInt($('#success-treshold').val());
     var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());
-
     var fieldsValid = validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold);
 
     if (fieldsValid) {
         rollDicePool(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold);
-    } else {
-        // fields not valid
     }
-
-    
 });

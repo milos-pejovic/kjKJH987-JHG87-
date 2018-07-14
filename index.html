@@ -14,7 +14,6 @@
 		</div><!-- row END -->
 
 		<div class="row">
-
 			<div class="col-2">
 				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
 			</div>
@@ -49,6 +48,14 @@
 									</ul>
 								</div>
 		
+								<div class="dice-pool-instructions">
+									<ul>
+										<li>Click on a dice to select it.</li>
+										<li>Enter the number of dice and tresholds.</li>
+										<li>Click on the selected dice to roll.</li>
+									</ul>
+								</div>
+
 								<div class="dice-buttons text-center">
 									<button data-diceSize="2">d2</button>
 									<button data-diceSize="3">d3</button>
@@ -104,9 +111,9 @@
 
 										<div class="column-two">
 											<div class="dice-pool-tresholds">
-												<span class="treshold-crittical-hit-label">Crittical hit treshold</span> <input type="number" min="1" id="crittical-hit-treshold" value="9" /><br />
-												<span class="treshold-success-label">Success treshold</span> <input type="number" min="1" id="success-treshold" value="6" /><br />
-												<span class="treshold-crittical-miss-label">Crittical miss treshold</span> <input type="number" min="1" id="crittical-miss-treshold" value="1" />
+												<span class="treshold-crittical-hit-label">Crittical hit treshold</span> <input type="number" min="1" id="crittical-hit-treshold" value="18" /><br />
+												<span class="treshold-success-label">Success treshold</span> <input type="number" min="1" id="success-treshold" value="11" /><br />
+												<span class="treshold-crittical-miss-label">Crittical miss treshold</span> <input type="number" min="1" id="crittical-miss-treshold" value="2" />
 											</div>
 										</div>
 
@@ -121,34 +128,29 @@
 												<!-- Success -->
 
 												<tr>
-
-													<td rowspan="2">Success <span class="success-total-span">(0)</span></td>
-													<td>Crittical <span class="crittical-success-span">(0)</span></td>
-													<td></td>
+													<td rowspan="2" class="total-result-label">Success <span class="success-total-span">(0)</span></td>
+													<td class="crittical-and-regular-result-label">Crittical <span class="crittical-success-span">(0)</span></td>
+													<td class="crittical-successes-results-field"></td>
 												</tr>
 												<tr>
-													<td>Regular <span class="regular-total-span">(0)</span></td>
-													<td></td>
+													<td class="crittical-and-regular-result-label">Regular <span class="regular-total-span">(0)</span></td>
+													<td class="regular-successes-results-field"></td>
 												</tr>
 
 												<!-- Failure -->
 
 												<tr>
-														<td rowspan="2">Failure <span class="failure-total-span">(0)</span></td>
-														<td>Regular <span class="regular-failure-span">(0)</span></td>
-														<td></td>
+														<td rowspan="2" class="total-result-label">Failure <span class="failure-total-span">(0)</span></td>
+														<td class="crittical-and-regular-result-label">Regular <span class="regular-failure-span">(0)</span></td>
+														<td class="regular-failures-results-field"></td>
 													</tr>
 													<tr>
-														<td>Crittical <span class="crittical-failure-span">(0)</span></td>
-														<td></td>
+														<td class="crittical-and-regular-result-label">Crittical <span class="crittical-failure-span">(0)</span></td>
+														<td class="crittical-failures-results-field"></td>
 													</tr>
-
 											</table>
 										</div>
-
 									</div><!-- dice-pool-work-area END -->
-
-									
 
 								</div>
 							</div>
