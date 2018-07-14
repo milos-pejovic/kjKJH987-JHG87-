@@ -73,33 +73,6 @@ function numberOrRoll(input) {
 
 /**
  * ==================================================================================================
- * Check if all segments are filled
- * ==================================================================================================
- */
-function checkAdvSegmentsFilled() {
-  var response = true;
-
-  $('.work-area .adv-roll-segment input').each(function() {
-    if ($(this).val() == '') {
-      response = false;
-    }
-  });
-
-  return response;
-}
-
-/**
- * ==================================================================================================
- * Add warning that not all fields are filled
- * ==================================================================================================
- */
-function fillInAllFieldsWarning() {
-  var warning = '<li>Please fill in all fields.</li>';
-  $('.advanced-roll .warnings').append(warning);
-}
-
-/**
- * ==================================================================================================
  * Shows the result that is integer
  * ==================================================================================================
  * @param {integer} result 
@@ -152,6 +125,52 @@ function showResult(result) {
 
 /**
  * ==================================================================================================
+ * Validate segment fields
+ * ==================================================================================================
+ */
+function validateSegmentEntries() {
+  var fieldsValid = true;
+  var emptyfields = false;
+  var fieldsWithOnlyD = false;
+  var errors = [];
+  var errorsHtml = '';
+
+  $('.advanced-roll .warnings').html('');
+
+  $('.container .adv-roll-segment input').each(function() {
+    var fieldValue = $(this).val();
+
+    if (fieldValue == '') {
+      emptyfields = true;
+    }
+
+    if (fieldValue == 'd') {
+      fieldsWithOnlyD = true;
+    }
+  });
+
+  if (emptyfields) {
+    errors.push('Please fill in all fields.');
+  }
+
+  if (fieldsWithOnlyD) {
+    errors.push('Please enter a number or "d" followed by a number in all fields.');
+  }
+
+  if (errors.length > 0) {
+    fieldsValid = false;
+    for (var i = 0; i < errors.length; i++) {
+      errorsHtml += '<li>' + errors[i] + '</li>';
+    }
+  }
+
+  $('.advanced-roll .warnings').html(errorsHtml);
+
+  return fieldsValid;
+}
+
+/**
+ * ==================================================================================================
  * Advanced roll Roll button click event handler
  * ==================================================================================================
  */
@@ -159,12 +178,19 @@ $('.adv-roll-btn').on('click', function(){
   var result;
   var startNumber = $('.work-area .start-number').val();
 
-  $('.advanced-roll .warnings').html('');
-
-  if (!checkAdvSegmentsFilled()) {
-    fillInAllFieldsWarning();
+  if (!validateSegmentEntries()) {
+    $('.adv-roll-result p').html('/');
+    return;
   }
+
   
+
+
+
+
+
+
+
   result = numberOrRoll(startNumber);
 
   // Foreach

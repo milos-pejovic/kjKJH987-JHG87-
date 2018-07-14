@@ -59,3 +59,17 @@ function compareNumbers(a, b)
 {
     return a - b;
 }
+
+/**
+ * Removes a value from an array
+ * @param {array} array 
+ * @param {mixed} value 
+ */
+function removeFromArray(array, value) {
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] == value) {
+			array.splice(i, 1);
+			break;
+		}
+	}
+}

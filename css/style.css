@@ -70,6 +70,17 @@
   margin-top: 10px;
 }
 
+.container .custom-dice-buttons button {
+  position: relative;
+}
+
+.container .custom-dice-buttons button i {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 20px;
+}
+
 .container .quick-roll .single-dice-result-div {
   text-align: center;
 }

@@ -1,20 +1,29 @@
 ===============================================================================
+  Project
+===============================================================================
+
+* Dizajn
+
+* Contact form
+
+* Provacy policy
+  * Check Google analytics and this
+
+* WordPress
+
+* Hosting
+  * HTTPS
+  * Try these
+    * www.randoming.com
+    * www.dices.com
+    * www.rollroll.com
+
+===============================================================================
   General
 ===============================================================================
 
-* dice pool
-  * Warning da mora da psotoji success treshold
-
-* Custom dice limit
-  * Stavi limit npr 1000 ili 9999
-
 * Responsive za telefone
 
-* Opposed roll right click
-  * desno dugme na vec izabrane kcoke takodje radi roll obe izabrane kocke 
-
-* Advanced roll
-  * kad ima samo "d" ukucano da da upozorenje
 
 * Roll history
   * Priakzuje poslednjih x rollova
@@ -28,28 +37,11 @@
   * Firefox
     * Scrollbar je i dalje tu kad se sve otvori
 
-* "Advanced roll" - click pomera sve u desno/levo
-
-* "Opposed roll" instruckije
-  * "Opposed roll" instruckije pomeriti desno od Roll type buttons
-
-* Rolls
-  * Simple roll - dodati
-    * treshold
-    * crittical hit/miss 
-  * Oppposed roll
-  * Dice pool
-    * treshold
-    * crittical hit/miss
-
 * Pozadine
   * Naci nove slike za pozadine
 
 * Zarsiti dizajn
   * sidebar
-
-* Napraviti
-  * Fold all / Expand all tabs ('Quick roll', 'Advanced roll', 'Presets')
 
 * Refresh preventer
   * Kao na Estimatoru
