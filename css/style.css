@@ -12,6 +12,11 @@
   max-width: 100% !important;
 }
 
+body,
+.card {
+  background-image: url('../images/stone7.jpg');
+}
+
 /**
  * ====================================================================================
  * Site general
@@ -57,6 +62,12 @@
 
 .elements-repository {
   display: none;
+}
+
+.contact-us {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
 }
 
 /**

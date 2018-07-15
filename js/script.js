@@ -1,6 +1,13 @@
-window.onbeforeunload = function() {
-	return '';
-};
+var confirmReload = false;
+
+/**
+ * Makes user confirm reload/leaving the page
+ */
+if (confirmReload){
+  window.onbeforeunload = function() {
+    return '';
+  };
+}
 
 /**
  * ==================================================================================================
@@ -11,15 +18,17 @@ window.onbeforeunload = function() {
 function setAccordionHeight() {
   var accordionHeight = 1000;
   var allCardsHeight = 0;
-  
-  $('.accordion .card').each(function() {
+
+//  accordion
+
+  $('.container .card').each(function() {
       allCardsHeight += $(this).height();
   });
 
   if (allCardsHeight > accordionHeight){
-      $('.accordion').height(allCardsHeight);
+      $('.container').height(allCardsHeight);
   } else {
-      $('.accordion').height(accordionHeight);
+      $('.container').height(accordionHeight);
   }
 }
 
@@ -52,7 +61,6 @@ $(document).ready(function() {
     }
   });
 });
-
 
 /**
  * ==================================================================================================
