@@ -1,5 +1,3 @@
-var workArea = $('.work-area');
-
 /**
  * ==================================================================================================
  * Math operations buttons click event handler
@@ -8,7 +6,7 @@ var workArea = $('.work-area');
 $('.math-controls button.math-operation').on('click', function(e){
   var operation = $(this).attr('data-operation');
   var elementToAdd = $('.elements-repository .' + operation + '-repo').html();
-  workArea.append(elementToAdd);
+  $('.work-area').append(elementToAdd);
 });
 
 /**
@@ -40,7 +38,7 @@ $('body').delegate('.adv-roll-segment input', 'input', function(evt){
     value = value.replace('d', '');
   }
 
-  // If "d" is present prevet "." from showing
+  // If "d" is present prevent "." from showing
   if (value.indexOf('d') != -1 && evt.originalEvent.data == '.') {
     value = value.replace('.', '');
   }
@@ -182,14 +180,6 @@ $('.adv-roll-btn').on('click', function(){
     $('.adv-roll-result p').html('/');
     return;
   }
-
-  
-
-
-
-
-
-
 
   result = numberOrRoll(startNumber);
 

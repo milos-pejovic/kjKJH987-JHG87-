@@ -27,7 +27,7 @@ $('.make-custom-dice').on('click', function(){
 
   // Max dice size 9999
   if (diceSidesNumber > 9999) {
-    alert('Please enter a number smaller than 10000');
+    alert('Please enter a number lower than 10000');
     return;
   }
 
@@ -72,6 +72,7 @@ function customDiceExists(diceSize) {
 $('.custom-dice-buttons').delegate('button i', 'click', function() {
   var diceSize = $(this).parent('button').attr('data-diceSize');
   var confirmCustomDiceRemoval = confirm('Remove custom dice d' + diceSize + '?');
+  diceSize = parseInt(diceSize);
 
   if (confirmCustomDiceRemoval) {
     $(this).parent('button').remove();

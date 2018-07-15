@@ -33,6 +33,28 @@
   background-image: url('../images/marble5.jpg');
 }
 
+.container .accordion .card-header .card-title {
+  position: relative;
+}
+
+.container .accordion .card-header .card-title i {
+  position: absolute;
+}
+
+.container .accordion .card-header .card-title .fas.fa-sort-up {
+  top: 15px;
+}
+
+.container .accordion .card-header .card-title .fas.fa-sort-down {
+  top: 5px;
+}
+
+.container .accordion .card-header .card-title .card-title-text {
+  position: relative;
+  left: 20px;
+  top:  5px;
+}
+
 .elements-repository {
   display: none;
 }
