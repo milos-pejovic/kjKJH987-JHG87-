@@ -4,8 +4,6 @@
 
 * Dizajn
 
-* Contact form
-
 * Provacy policy
   * Check Google analytics and this
 
@@ -22,8 +20,14 @@
   General
 ===============================================================================
 
-* Responsive za telefone
+* Socal share
+  * Facebook...
+  * <meta> podaci slika itd.
 
+* SEO
+  * Yoast SEO
+
+* Responsive za telefone
 
 * Roll history
   * Priakzuje poslednjih x rollova
