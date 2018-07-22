@@ -14,15 +14,15 @@ $('#how-many-dice-input, #crittical-hit-treshold, #success-treshold, #crittical-
 });
 
 /**
-* ==================================================================================================
-* Validate dice pool entries
-* ==================================================================================================
-* @param {int} diceSize 
-* @param {int} critticalHitTreshold 
-* @param {int} successTreshold 
-* @param {int} critticalMissTreshold 
-* @return boolean
-*/
+ * ==================================================================================================
+ * Validate dice pool entries
+ * ==================================================================================================
+ * @param {int} diceSize 
+ * @param {int} critticalHitTreshold 
+ * @param {int} successTreshold 
+ * @param {int} critticalMissTreshold 
+ * @return boolean
+ */
 function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold) {
   var errorsUlElement = $('.dice-pool-work-area .warnings .warnings-list');
   var errors = [];
@@ -66,14 +66,14 @@ function validateDicePoolEntries(diceSize, critticalHitTreshold, successTreshold
 }
 
 /**
-* ==================================================================================================
-* Roll dice pool
-* ==================================================================================================
-* @param {int} diceSize 
-* @param {int} critticalHitTreshold 
-* @param {int} successTreshold 
-* @param {int} critticalMissTreshold 
-*/
+ * ==================================================================================================
+ * Roll dice pool
+ * ==================================================================================================
+ * @param {int} diceSize 
+ * @param {int} critticalHitTreshold 
+ * @param {int} successTreshold 
+ * @param {int} critticalMissTreshold 
+ */
 function rollDicePool(diceSize, critticalHitTreshold, successTreshold, critticalMissTreshold) {
   var numberOfDice = parseInt($('#how-many-dice-input').val()); 
   var critticalSuccesses = [];
@@ -107,14 +107,14 @@ function rollDicePool(diceSize, critticalHitTreshold, successTreshold, crittical
 }
 
 /**
-* ==================================================================================================
-* Displays dice pool results
-* ==================================================================================================
-* @param {int} critticalSuccesses 
-* @param {int} regularSuccesses 
-* @param {int} regularFailures 
-* @param {int} critticalFailures 
-*/
+ * ==================================================================================================
+ * Displays dice pool results
+ * ==================================================================================================
+ * @param {int} critticalSuccesses 
+ * @param {int} regularSuccesses 
+ * @param {int} regularFailures 
+ * @param {int} critticalFailures 
+ */
 function dispalyDicePollResults(critticalSuccesses, regularSuccesses, regularFailures, critticalFailures) {
   var critticalSuccessesHtmlResult = '';
   var regularSuccessesHtmlResult = '';
@@ -151,10 +151,10 @@ function dispalyDicePollResults(critticalSuccesses, regularSuccesses, regularFai
 }
 
 /**
-* ==================================================================================================
-* Dice pool chosen dice click handler
-* ==================================================================================================
-*/
+ * ==================================================================================================
+ * Dice pool chosen dice click handler
+ * ==================================================================================================
+ */
 $('.dice-pool-work-area .chosen-dice').delegate('button', 'click', function() {
   var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
   var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());

@@ -1,4 +1,4 @@
-var confirmReload = false;
+var confirmReload = true;
 
 /**
  * Makes user confirm reload/leaving the page
@@ -19,7 +19,7 @@ function setAccordionHeight() {
   var accordionHeight = 1000;
   var allCardsHeight = 0;
 
-//  accordion
+  // Accordion
 
   $('.container .card').each(function() {
       allCardsHeight += $(this).height();

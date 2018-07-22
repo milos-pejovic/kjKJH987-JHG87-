@@ -14,7 +14,7 @@
 
 body,
 .card {
-  background-image: url('../images/stone7.jpg');
+  background-image: url('../images/main-background.jpg');
 }
 
 /**
@@ -35,7 +35,8 @@ body,
 
 .container .accordion .card-header {
   background-color: #e2cec0;
-  background-image: url('../images/marble5.jpg');
+  background-image: url('../images/card.jpg');
+  background-size: 100% 100%;
 }
 
 .container .accordion .card-header .card-title {
@@ -94,7 +95,8 @@ body,
   border-radius: 25px;
   font-size: 26px;
   font-weight: bold;
-  background-image: url('../images/marble1.jpg');
+  background-image: url('../images/dice.jpg');
+  background-size: 100% 100%;
   cursor: pointer;
   overflow: visible;
 }

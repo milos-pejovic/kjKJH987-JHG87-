@@ -3,18 +3,14 @@
 ===============================================================================
 
 * Dizajn
+  * Naci nove slike za pozadine
 
 * Provacy policy
   * Check Google analytics and this
 
-* WordPress
-
 * Hosting
   * HTTPS
-  * Try these
-    * www.randoming.com
-    * www.dices.com
-    * www.rollroll.com
+  * plati racun
 
 ===============================================================================
   General
@@ -25,12 +21,11 @@
   * <meta> podaci slika itd.
 
 * SEO
-  * Yoast SEO
 
 * Responsive za telefone
 
 * Roll history
-  * Priakzuje poslednjih x rollova
+  * Prikazuje poslednjih x rollova
 
 * Testirati
   * Testirati na drugim browserima
@@ -40,12 +35,6 @@
     * Scrollbar je i dalje tu kad se sve otvori
   * Firefox
     * Scrollbar je i dalje tu kad se sve otvori
-
-* Pozadine
-  * Naci nove slike za pozadine
-
-* Zarsiti dizajn
-  * sidebar
 
 * Refresh preventer
   * Kao na Estimatoru
@@ -72,5 +61,3 @@
 
 * Output
   * Da li da postoji output za svaki korak operacije?
-
-
