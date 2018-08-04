@@ -95,6 +95,7 @@ function addDicePollEventHandlers() {
 $('.quick-roll-types .single-dice').on('click', function() {
     $('.opposed-roll-instructions').hide();
     $('.dice-pool-instructions').hide();
+    $('.single-dice-instructions').show();
     $('.dice-pool-work-area').hide();
     addSingleDiceEventHandlers();
 });
@@ -108,6 +109,7 @@ $('.quick-roll-types .opposed-roll').on('click', function() {
     $('.opposed-roll-instructions').show();
     $('.dice-pool-work-area').hide();
     $('.dice-pool-instructions').hide();
+    $('.single-dice-instructions').hide();
     addOpposedRollEventHandlers();
 });
 
@@ -119,6 +121,7 @@ $('.quick-roll-types .opposed-roll').on('click', function() {
 $('.quick-roll-types .dice-pool').on('click', function() {
     $('.opposed-roll-instructions').hide();
     $('.dice-pool-work-area').hide();
+    $('.single-dice-instructions').hide();
     $('.dice-pool-instructions').show();
     addDicePollEventHandlers();
 });
@@ -131,4 +134,15 @@ $('.quick-roll-types .dice-pool').on('click', function() {
 $('.quick-roll-types .dice-pool').on('click', function() {
     $('.opposed-roll-instructions').hide();
     $('.dice-pool-work-area').show();
+});
+
+/**
+ * ==================================================================================================
+ * Quick roll types button style
+ * ==================================================================================================
+ * On click of a quick roll type style the clicked button, and remove that style from teh rest of the buttons.
+ */
+$('.quick-roll .quick-roll-types button').on('click', function() {
+    $('.quick-roll .quick-roll-types button').removeClass('active-quick-roll-type');
+    $(this).addClass('active-quick-roll-type');
 });

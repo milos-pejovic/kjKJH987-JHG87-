@@ -16,6 +16,8 @@
   General
 ===============================================================================
 
+* Favicon
+
 * Socal share
   * Facebook...
   * <meta> podaci slika itd.

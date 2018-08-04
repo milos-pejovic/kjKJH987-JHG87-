@@ -33,7 +33,7 @@ $('body').delegate('.adv-roll-segment input', 'input', function(evt){
     value = value[0] + '.' + value[1];
   }
 
-  // If "." is present prevet "d" from showing
+  // If "." is present prevent "d" from showing
   if (value.indexOf('.') != -1 && evt.originalEvent.data == 'd') {
     value = value.replace('d', '');
   }

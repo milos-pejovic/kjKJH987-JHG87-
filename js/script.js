@@ -1,4 +1,4 @@
-var confirmReload = true;
+var confirmReload = false;
 
 /**
  * Makes user confirm reload/leaving the page

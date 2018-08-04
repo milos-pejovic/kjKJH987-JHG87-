@@ -1,12 +1,14 @@
 <html>
 <head>
+	<title>Roll Dice for role playing games and boardgames</title>
+	<meta name="keywords" content="roll,dice,fantasy,role,playing,game,boardgame,cyberpunk,postapocalyptic" />
+	<meta name="description" content="Roll any dice online for fantasy, sci fy, cyberpunk, or post apocalyptic role playing games or boardgames. Use dice such as d4, d20, d100 and more." />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
 
 <body>
-
 	<div>
 		<p class="contact-us">Have suggestions? Found bugs?</p>
 		<p class="contact-us"><a href="mailto:rollygondice@gmail.com">Contact us!</a></p>
@@ -16,6 +18,7 @@
 		<div class="row">
 			<div class="col-12">
 				<h1 class="text-center main-title">Rollygon</h1>
+				<h3 class="text-center">Roll Dice</h3>
 			</div>
 
 		</div><!-- row END -->
@@ -41,7 +44,7 @@
 							<div class="card-body">
 		
 								<div class="quick-roll-types">
-									<button class="single-dice" data-roll-type="single-dice">Single dice</button>
+									<button class="single-dice active-quick-roll-type" data-roll-type="single-dice">Single dice</button>
 									<button class="opposed-roll" data-roll-type="opposed-roll">Opposed roll</button>
 									<button class="dice-pool" data-roll-type="dice-pool">Dice pool</button>
 								</div>
@@ -50,6 +53,12 @@
 									<button class="make-custom-dice">Make custom dice</button>
 								</div>
 		
+								<div class="single-dice-instructions">
+									<ul>
+										<li>Click on a dice definition to roll it.</li>
+									</ul>
+								</div>
+
 								<div class="opposed-roll-instructions">
 									<ul>
 										<li>Click on a dice (left click or right click) to add it.</li>
@@ -114,7 +123,7 @@
 											</div>
 		
 											<div class="how-many-dice">
-												Number of dice <input type="number" min="1" max="100" value="10" id="how-many-dice-input" />
+												<span>Number of dice</span> <input type="number" min="1" max="100" value="10" id="how-many-dice-input" />
 											</div>	
 										</div>
 
