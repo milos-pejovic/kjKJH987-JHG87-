@@ -10,7 +10,6 @@
 
 * Hosting
   * HTTPS
-  * plati racun
 
 ===============================================================================
   General
@@ -38,11 +37,6 @@
   * Firefox
     * Scrollbar je i dalje tu kad se sve otvori
 
-* Refresh preventer
-  * Kao na Estimatoru
-
-* <head>
-  * Add stuff here
 
 ===============================================================================
   Quick roll

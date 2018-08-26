@@ -25,9 +25,9 @@ body,
   background-image: url('../images/main-background.jpg');
 }
 
-button {
+/* button {
   background-image: url('../images/button-background.jpg');
-}
+} */
 
 /**
  * ====================================================================================
@@ -38,6 +38,20 @@ button {
 .container .main-title {
   font-size: 70px;
   margin: 30px 0 0 0;
+}
+
+.container .title-wrap {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+.container .all-dice-image {
+  width: 170px;
+  vertical-align: baseline;
+}
+
+.container .title-section {
+  text-align: center;
 }
 
 .container .accordion .card-link {
@@ -84,14 +98,75 @@ button {
   font-size: 20px;
 }
 
-.active-quick-roll-type {
-}
-
 /**
  * ====================================================================================
  * Quick roll - general and single dice roll
  * ====================================================================================
  */
+
+ .dice {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.dice img {
+  width: 80px;
+}
+
+.dice.d100 img {
+  width: 115px;
+}
+
+.dice p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-size: 25px;
+}
+
+.dice.d3 p {
+  top: 43px;
+  left: 9px;
+}
+
+.dice.d4 p {
+  top: 40px;
+  left: 4px;
+}
+
+.dice.d6 p {
+  top: 43px;
+  left: 9px;
+}
+
+.dice.d8 p {
+  top: 25px;
+}
+
+.dice.d10 p {
+  top: 21px;
+}
+
+.dice.d12 p {
+  top: 22px;
+}
+
+.dice.d20 p {
+  top: 25px;
+  left: -8px;
+}
+
+.dice.d100 p {
+  top: 23px;
+  left: 5px;
+}
 
 .container .make-custom-dice,
 .quick-roll-types button {
@@ -101,24 +176,33 @@ button {
   padding: 5px 15px;
 }
 
-.container .dice-buttons button,
+/* .container .dice-buttons button,
 .container .custom-dice-buttons button,
 .container .left-dice button,
 .container .right-dice button,
-.dice-pool-work-area .chosen-dice button {
+.dice-pool-work-area .chosen-dice button { */
+
+.container .dice-buttons div,
+.container .custom-dice-buttons div,
+.container .left-dice div,
+.container .right-dice div,
+.dice-pool-work-area .chosen-dice div {
+  /* background: red; */
+  display: inline-block;
   width: 84px;
   height: 60px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   font-size: 26px;
   font-weight: bold;
-  background-image: url('../images/dice.jpg');
-  background-size: 100% 100%;
+  /* background-image: url('../images/dice.jpg');
+  background-size: 100% 100%; */
   cursor: pointer;
   overflow: visible;
 }
 
 .container .custom-dice-buttons {
   margin-top: 10px;
+  position: relative;
 }
 
 .container .custom-dice-buttons button {
@@ -291,10 +375,6 @@ button {
   cursor: pointer;
   padding: 5px 15px;
 }
-
-/* .container .advanced-roll .dice {
-  margin-bottom: 20px;
-} */
 
 .container .advanced-roll .controls {
   margin-bottom: 10px;

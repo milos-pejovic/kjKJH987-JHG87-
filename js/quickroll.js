@@ -141,6 +141,8 @@ $('.quick-roll-types .dice-pool').on('click', function() {
  * Quick roll types button style
  * ==================================================================================================
  * On click of a quick roll type style the clicked button, and remove that style from teh rest of the buttons.
+ * 
+ * 
  */
 $('.quick-roll .quick-roll-types button').on('click', function() {
     $('.quick-roll .quick-roll-types button').removeClass('active-quick-roll-type');
