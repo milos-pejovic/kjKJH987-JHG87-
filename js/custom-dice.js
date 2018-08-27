@@ -22,7 +22,18 @@ function makeNewCustomDiceHtmlElement(diceSidesNumber) {
  */
 $('.make-custom-dice').on('click', function(){
   var diceSidesNumber = prompt('How many sides should the dice have?');
+
+  if (typeof(diceSidesNumber) != 'string') {
+    return;
+  }
+
   diceSidesNumber = diceSidesNumber.replace(/[^0-9]/gi, '');
+
+  if (diceSidesNumber === ''){
+    alert('Please enter a number.');
+    return;
+  }
+
   diceSidesNumber = parseInt(diceSidesNumber);
 
   // Max dice size 9999
@@ -69,13 +80,13 @@ function customDiceExists(diceSize) {
  * Remove custom dice handler
  * ==================================================================================================
  */
-$('.custom-dice-buttons').delegate('button i', 'click', function() {
-  var diceSize = $(this).parent('button').attr('data-diceSize');
+$('.custom-dice-buttons').delegate('div i', 'click', function() {
+  var diceSize = $(this).parents('div.custom-dice').attr('data-dicesize');
   var confirmCustomDiceRemoval = confirm('Remove custom dice d' + diceSize + '?');
   diceSize = parseInt(diceSize);
 
   if (confirmCustomDiceRemoval) {
-    $(this).parent('button').remove();
+    $(this).parents('div.custom-dice').remove();
     if (!customDiceExists(diceSize)) {
       removeFromArray(existingDiceSizes, diceSize);
     }

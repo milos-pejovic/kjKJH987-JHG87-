@@ -25,9 +25,9 @@ body,
   background-image: url('../images/main-background.jpg');
 }
 
-/* button {
+button {
   background-image: url('../images/button-background.jpg');
-} */
+}
 
 /**
  * ====================================================================================
@@ -104,7 +104,7 @@ body,
  * ====================================================================================
  */
 
- .dice {
+.dice {
   position: relative;
   width: 100px;
   height: 100px;
@@ -168,7 +168,7 @@ body,
   left: 5px;
 }
 
-.container .make-custom-dice,
+/* .container .make-custom-dice, */
 .quick-roll-types button {
   margin-bottom: 10px;
   cursor: pointer;
@@ -200,19 +200,23 @@ body,
   overflow: visible;
 }
 
+.container .custom-dice {
+  margin: 15px;
+}
+
 .container .custom-dice-buttons {
-  margin-top: 10px;
+  margin-top: 35px;
   position: relative;
 }
 
-.container .custom-dice-buttons button {
+.container .custom-dice-buttons budivtton {
   position: relative;
 }
 
-.container .custom-dice-buttons button i {
+.container .custom-dice-buttons div i {
   position: absolute;
-  top: 0;
-  right: 5px;
+  top: -30px;
+  right: -20px;
   font-size: 20px;
 }
 

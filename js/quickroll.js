@@ -34,9 +34,9 @@ $('.quick-roll-types button').on('click', function() {
  * ==================================================================================================
  */
 function addSingleDiceEventHandlers() {
-    $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
-    $('.dice-buttons button, .custom-dice-buttons button').unbind('contextmenu');
-    $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
+    $('.dice-buttons div, .custom-dice-buttons div').unbind('click');
+    $('.dice-buttons div, .custom-dice-buttons div').unbind('contextmenu');
+    $('.dice-buttons div, .custom-dice-buttons div').on('click', function() {
         var diceSize = $(this).attr('data-diceSize');
         var result = roll(parseInt(diceSize));
         $('.result').html(result);
