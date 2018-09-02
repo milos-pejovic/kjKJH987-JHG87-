@@ -50,19 +50,29 @@ function addSingleDiceEventHandlers() {
  * ==================================================================================================
  */
 function addOpposedRollEventHandlers() {
-    $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
-    $('.dice-buttons button, .custom-dice-buttons button').unbind('contextmenu');
-    $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
+    $('.dice-buttons div, .custom-dice-buttons div').unbind('click');
+    $('.dice-buttons div, .custom-dice-buttons div').unbind('contextmenu');
+    $('.dice-buttons div, .custom-dice-buttons div').on('click', function() {
         var diceSize = $(this).attr('data-dicesize');
-        var element = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
+
+        var element = '<div data-diceSize="'+diceSize+'" class="dice custom-dice-'+diceSize+' custom-dice" data-diceSize="'+diceSize+'">';
+        element += '<img src="images/single-dice/d'+(diceSize == 3 ? 6 : diceSize)+'.gif" />';
+        element += '<p>d'+diceSize+'</p>';
+        element += '</div>';
+
         $('.left-dice-wrapper .left-dice').html(element);
         rollOpposedDice();
     });
 
-    $('.dice-buttons button, .custom-dice-buttons button').on('contextmenu', function(e) {
+    $('.dice-buttons div, .custom-dice-buttons div').on('contextmenu', function(e) {
         e.preventDefault();
         var diceSize = $(this).attr('data-dicesize');
-        var element = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
+      
+        var element = '<div data-diceSize="'+diceSize+'" class="dice custom-dice-'+diceSize+' custom-dice" data-diceSize="'+diceSize+'">';
+        element += '<img src="images/single-dice/d'+(diceSize == 3 ? 6 : diceSize)+'.gif" />';
+        element += '<p>d'+diceSize+'</p>';
+        element += '</div>';
+
         $('.right-dice-wrapper .right-dice').html(element);
         rollOpposedDice();
     });
