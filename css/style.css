@@ -284,19 +284,58 @@ button {
 
 .opposed-roll-results .left-dice-wrapper .left-dice,
 .opposed-roll-results .right-dice-wrapper .right-dice {
-  padding: 10px;
-  width: 100px;
+  /* padding: 10px;
+  width: 100px; */
   height: 100px;
   position: relative;
 }
 
-.opposed-roll-results .left-dice-wrapper .left-dice button,
-.opposed-roll-results .right-dice-wrapper .right-dice button {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  left: 14px;
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-3 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-3 p {
+  top: 40px;
+  left: 7px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-4 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-4 p {
+  left: 4px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-6 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-6 p {
+  top: 42px;
+  left: 9px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-8 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-8 p {
+  top: 30px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-10 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-10 p {
+  top: 25px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-12 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-12 p {
+  top: 25px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-20 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-20 p {
+  top: 30px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-100 img,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-100 img {
+  width: 110px;
+}
+
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-100 p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-100 p {
+  top: 20px;
+  left: 10px;
 }
 
 .opposed-roll-results .opposed-roll-vs-wrap {

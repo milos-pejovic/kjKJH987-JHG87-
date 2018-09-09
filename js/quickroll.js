@@ -55,12 +55,16 @@ function addOpposedRollEventHandlers() {
     $('.dice-buttons div, .custom-dice-buttons div').on('click', function() {
         var diceSize = $(this).attr('data-dicesize');
 
-        var element = '<div data-diceSize="'+diceSize+'" class="dice custom-dice-'+diceSize+' custom-dice" data-diceSize="'+diceSize+'">';
-        element += '<img src="images/single-dice/d'+(diceSize == 3 ? 6 : diceSize)+'.gif" />';
-        element += '<p>d'+diceSize+'</p>';
-        element += '</div>';
+        // var element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize + ' custom-dice" data-diceSize="' + diceSize + '">';
+        // element += '<img src="images/single-dice/d' + (diceSize == 3 ? 6 : diceSize) + '.gif" />';
+        // element += '<p>d' + diceSize + '</p>';
+        // element += '</div>';
 
-        $('.left-dice-wrapper .left-dice').html(element);
+        // $('.left-dice-wrapper .left-dice').html(element);
+
+
+        renderClickedOpposedDice(diceSize, 'left');
+
         rollOpposedDice();
     });
 
@@ -68,16 +72,42 @@ function addOpposedRollEventHandlers() {
         e.preventDefault();
         var diceSize = $(this).attr('data-dicesize');
       
-        var element = '<div data-diceSize="'+diceSize+'" class="dice custom-dice-'+diceSize+' custom-dice" data-diceSize="'+diceSize+'">';
-        element += '<img src="images/single-dice/d'+(diceSize == 3 ? 6 : diceSize)+'.gif" />';
-        element += '<p>d'+diceSize+'</p>';
-        element += '</div>';
+        // var element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize+' custom-dice" data-diceSize="' + diceSize+'">';
+        // element += '<img src="images/single-dice/d' + (diceSize == 3 ? 6 : diceSize) + '.gif" />';
+        // element += '<p>d' + diceSize + '</p>';
+        // element += '</div>';
 
-        $('.right-dice-wrapper .right-dice').html(element);
+        // $('.right-dice-wrapper .right-dice').html(element);
+
+        renderClickedOpposedDice(diceSize, 'right');
+
         rollOpposedDice();
     });
 
     currentQuickRollType = 'opposed-roll';
+}
+
+/**
+ * ==================================================================================================
+ * renderClickedOpposedDice
+ * ==================================================================================================
+ * Chanegs the left or right dice in "Opposed roll". 
+ * @param {int} diceSize 
+ * @param {string} side - Left dice or right dice
+ */
+function renderClickedOpposedDice(diceSize, side) {
+
+    if (side !== 'left' && side !== 'right') {
+        console.error("Parameter 'side' must be a string 'left' or 'right'.");
+        return;
+    }
+
+    var element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize+' custom-dice" data-diceSize="' + diceSize+'">';
+    element += '<img src="images/single-dice/d' + (diceSize == 3 ? 6 : diceSize) + '.gif" />';
+    element += '<p>d' + diceSize + '</p>';
+    element += '</div>';
+
+    $('.' + side + '-dice-wrapper .' + side + '-dice').html(element);
 }
 
 /**
@@ -150,9 +180,7 @@ $('.quick-roll-types .dice-pool').on('click', function() {
  * ==================================================================================================
  * Quick roll types button style
  * ==================================================================================================
- * On click of a quick roll type style the clicked button, and remove that style from teh rest of the buttons.
- * 
- * 
+ * On click of a quick roll type style the clicked button, and remove that style from the rest of the buttons.
  */
 $('.quick-roll .quick-roll-types button').on('click', function() {
     $('.quick-roll .quick-roll-types button').removeClass('active-quick-roll-type');
