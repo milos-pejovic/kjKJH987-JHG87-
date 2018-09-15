@@ -52,17 +52,9 @@ function addSingleDiceEventHandlers() {
 function addOpposedRollEventHandlers() {
     $('.dice-buttons div, .custom-dice-buttons div').unbind('click');
     $('.dice-buttons div, .custom-dice-buttons div').unbind('contextmenu');
+
     $('.dice-buttons div, .custom-dice-buttons div').on('click', function() {
         var diceSize = $(this).attr('data-dicesize');
-
-        // var element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize + ' custom-dice" data-diceSize="' + diceSize + '">';
-        // element += '<img src="images/single-dice/d' + (diceSize == 3 ? 6 : diceSize) + '.gif" />';
-        // element += '<p>d' + diceSize + '</p>';
-        // element += '</div>';
-
-        // $('.left-dice-wrapper .left-dice').html(element);
-
-
         renderClickedOpposedDice(diceSize, 'left');
 
         rollOpposedDice();
@@ -71,14 +63,6 @@ function addOpposedRollEventHandlers() {
     $('.dice-buttons div, .custom-dice-buttons div').on('contextmenu', function(e) {
         e.preventDefault();
         var diceSize = $(this).attr('data-dicesize');
-      
-        // var element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize+' custom-dice" data-diceSize="' + diceSize+'">';
-        // element += '<img src="images/single-dice/d' + (diceSize == 3 ? 6 : diceSize) + '.gif" />';
-        // element += '<p>d' + diceSize + '</p>';
-        // element += '</div>';
-
-        // $('.right-dice-wrapper .right-dice').html(element);
-
         renderClickedOpposedDice(diceSize, 'right');
 
         rollOpposedDice();
@@ -102,8 +86,15 @@ function renderClickedOpposedDice(diceSize, side) {
         return;
     }
 
-    var element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize+' custom-dice" data-diceSize="' + diceSize+'">';
-    element += '<img src="images/single-dice/d' + (diceSize == 3 ? 6 : diceSize) + '.gif" />';
+    var element = '';
+
+    if (isDiceSizeCustom(diceSize)) {
+        element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-custom-number custom-dice" data-diceSize="' + diceSize + '">';
+    } else {
+        element = '<div data-diceSize="' + diceSize + '" class="dice custom-dice-' + diceSize + ' custom-dice" data-diceSize="' + diceSize + '">';
+    }
+
+    element += '<img src="images/single-dice/d' + diceImageNameNumber(diceSize) + '.gif" />';
     element += '<p>d' + diceSize + '</p>';
     element += '</div>';
 
@@ -116,13 +107,24 @@ function renderClickedOpposedDice(diceSize, side) {
  * ==================================================================================================
  */
 function addDicePollEventHandlers() {
-    $('.dice-buttons button, .custom-dice-buttons button').unbind('click');
-    $('.dice-buttons button, .custom-dice-buttons button').unbind('contextmenu');
+    $('.dice-buttons div, .custom-dice-buttons div').unbind('click');
+    $('.dice-buttons div, .custom-dice-buttons div').unbind('contextmenu');
 
-    $('.dice-buttons button, .custom-dice-buttons button').on('click', function() {
+    $('.dice-buttons div, .custom-dice-buttons div').on('click', function() {
         var diceSize = $(this).attr('data-dicesize');
-        var newElement = '<button data-dicesize="'+diceSize+'">d'+diceSize+'</button>';
-        $('.dice-pool-work-area .chosen-dice').html(newElement);
+        var element = '';
+
+        if (isDiceSizeCustom(diceSize)) {
+            element = '<div data-diceSize="' + diceSize + '" class="dice d100" data-diceSize="' + diceSize + '">';
+        } else {
+            element = '<div data-diceSize="' + diceSize + '" class="dice d' + diceSize + '" data-diceSize="' + diceSize + '">';
+        }
+    
+        element += '<img src="images/single-dice/d' + diceImageNameNumber(diceSize) + '.gif" />';
+        element += '<p>d' + diceSize + '</p>';
+        element += '</div>';
+
+        $('.dice-pool-work-area .chosen-dice').html(element);
     });
     currentQuickRollType = 'dice-pool';
 }
@@ -186,3 +188,39 @@ $('.quick-roll .quick-roll-types button').on('click', function() {
     $('.quick-roll .quick-roll-types button').removeClass('active-quick-roll-type');
     $(this).addClass('active-quick-roll-type');
 });
+
+
+/**
+ * ==================================================================================================
+ * diceImageNameNumber
+ * ==================================================================================================
+ * @param {*} diceSize 
+ */
+function diceImageNameNumber(diceSize) {
+    var diceImageNameNumber = '';
+
+    if (originalDiceSizes.indexOf(parseInt(diceSize)) !== -1){
+        if (diceSize == '3') {
+            diceSize = '6';
+        }
+        diceImageNameNumber = diceSize;
+    } else {
+        diceImageNameNumber = '100';
+    }
+
+    return diceImageNameNumber;
+}
+
+/**
+ * ==================================================================================================
+ * isDiceSizeCustom
+ * ==================================================================================================
+ * @param {*} diceSize 
+ */
+function isDiceSizeCustom(diceSize) {
+    if (originalDiceSizes.indexOf(parseInt(diceSize)) == -1) {
+        return true;
+    } else {
+        return false;
+    }
+}

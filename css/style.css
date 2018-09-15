@@ -118,6 +118,10 @@ button {
   width: 115px;
 }
 
+.dice-pool-work-area .custom-dice img {
+  width: 115px;
+}
+
 .dice p {
   position: absolute;
   bottom: 0;
@@ -168,7 +172,6 @@ button {
   left: 5px;
 }
 
-/* .container .make-custom-dice, */
 .quick-roll-types button {
   margin-bottom: 10px;
   cursor: pointer;
@@ -176,26 +179,16 @@ button {
   padding: 5px 15px;
 }
 
-/* .container .dice-buttons button,
-.container .custom-dice-buttons button,
-.container .left-dice button,
-.container .right-dice button,
-.dice-pool-work-area .chosen-dice button { */
-
 .container .dice-buttons div,
 .container .custom-dice-buttons div,
 .container .left-dice div,
 .container .right-dice div,
 .dice-pool-work-area .chosen-dice div {
-  /* background: red; */
   display: inline-block;
   width: 84px;
   height: 60px;
-  /* border-radius: 25px; */
   font-size: 26px;
   font-weight: bold;
-  /* background-image: url('../images/dice.jpg');
-  background-size: 100% 100%; */
   cursor: pointer;
   overflow: visible;
 }
@@ -284,8 +277,6 @@ button {
 
 .opposed-roll-results .left-dice-wrapper .left-dice,
 .opposed-roll-results .right-dice-wrapper .right-dice {
-  /* padding: 10px;
-  width: 100px; */
   height: 100px;
   position: relative;
 }
@@ -328,12 +319,16 @@ button {
 }
 
 .opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-100 img,
-.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-100 img {
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-100 img,
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-custom-number img,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-custom-number img {
   width: 110px;
 }
 
 .opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-100 p,
-.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-100 p {
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-100 p,
+.opposed-roll-results .left-dice-wrapper .left-dice .custom-dice-custom-number p,
+.opposed-roll-results .right-dice-wrapper .right-dice .custom-dice-custom-number p {
   top: 20px;
   left: 10px;
 }
@@ -388,6 +383,10 @@ button {
 .dice-pool-work-area table .crittical-and-regular-result-label {
   width: 15%;
   min-width: 200px;
+}
+
+.dice-pool-work-area .chosen-dice {
+	height: 90px;
 }
 
 /**

@@ -4,12 +4,12 @@
  * ==================================================================================================
  */
 $('#how-many-dice-input, #crittical-hit-treshold, #success-treshold, #crittical-miss-treshold').on('input', function() {
-  if (Number.parseInt($(this).val()) > 1000) {
-      $(this).val('1000');
+  if (Number.parseInt($(this).val()) > 9999) {
+    $(this).val('9999');
   }
 
   if (Number.parseInt($(this).val()) < 0) {
-      $(this).val('0');
+    $(this).val('0');
   }
 });
 
@@ -155,8 +155,8 @@ function dispalyDicePollResults(critticalSuccesses, regularSuccesses, regularFai
  * Dice pool chosen dice click handler
  * ==================================================================================================
  */
-$('.dice-pool-work-area .chosen-dice').delegate('button', 'click', function() {
-  var diceSize = parseInt($('.dice-pool-work-area .chosen-dice button').attr('data-dicesize'));
+$('.dice-pool-work-area .chosen-dice').delegate('div', 'click', function() {
+  var diceSize = parseInt($('.dice-pool-work-area .chosen-dice div').attr('data-dicesize'));
   var critticalHitTreshold = parseInt($('#crittical-hit-treshold').val());
   var successTreshold = parseInt($('#success-treshold').val());
   var critticalMissTreshold = parseInt($('#crittical-miss-treshold').val());

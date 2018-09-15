@@ -1,3 +1,6 @@
+var originalDiceSizes = [3, 4, 6, 8, 10, 12, 20, 100];
+var existingDiceSizes = [3, 4, 6, 8, 10, 12, 20, 100];
+
 var confirmReload = false;
 
 /**
