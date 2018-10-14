@@ -2,8 +2,15 @@
   Project
 ===============================================================================
 
-* Dizajn
-  * Naci nove slike za pozadine
+* Cookies
+  * Banner
+    * Info
+      * Google analytics
+      * Quality
+    * Checkbox
+    * "Cookies" section - place to change Cookie allowance
+
+* Set "Do not show this again cookie"
 
 * Provacy policy
   * Check Google analytics and this
@@ -11,11 +18,12 @@
 * Hosting
   * HTTPS
 
+* Image ALT attribute
+  * Ni jedna slika nema alt, dodati
+
 ===============================================================================
   General
 ===============================================================================
-
-* Favicon
 
 * Socal share
   * Facebook...
@@ -57,3 +65,4 @@
 
 * Output
   * Da li da postoji output za svaki korak operacije?
+

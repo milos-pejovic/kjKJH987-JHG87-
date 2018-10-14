@@ -10,9 +10,18 @@
 </head>
 
 <body>
-	<div>
-		<p class="contact-us">Have suggestions? Found bugs?</p>
-		<p class="contact-us"><a href="mailto:rollygondice@gmail.com">Contact us!</a></p>
+
+	<div class="cookie-banner">
+		<div class="cookie-banner-container">
+			<h2>Privacy</h2>
+			<p>Rollygon uses cookies. This technology allows the site to store data about the site in your browser. We use cookies to improve your experience while using the site. We also use cookies to imploy Google analytics. With it, we collect broad metrics (how many people use the site, when do they use it, how often, how long...). By using Rollygon you agree to out cookie policy.</p>
+
+			<button id="close-cookie-banner">Close</button>
+		</div>
+	</div>
+
+	<div class="header">
+		<p class="contact-us"><a href="#" id="privacy-link">Privacy</a><br />Have suggestions? Found bugs? <a href="mailto:rollygondice@gmail.com">Contact us!</a></p>
 	</div>
 
 	<div class="container">
@@ -61,7 +70,7 @@
 		
 								<div class="single-dice-instructions">
 									<ul>
-										<li>Click on a dice definition to roll it.</li>
+										<li>Click on a dice to roll it.</li>
 									</ul>
 								</div>
 
@@ -373,6 +382,8 @@
 
 	<script src="js/utils.js"></script>
 	<script src="js/libs/jquery.js"></script>
+	<script src="js/libs/jquery.cookie.js"></script>
+	<script src="js/privacy.js"></script>
 	<script src="js/libs/bootstrap.min.js"></script>
 	<script src="js/libs/mresize.js"></script>
 	<script src="js/script.js"></script>
