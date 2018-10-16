@@ -19,7 +19,7 @@ function showCookieBanner() {
   }
 }
 
-setTimeout('showCookieBanner()', 100);
+setTimeout('showCookieBanner()', 200);
 
 /**
  * ==================================================================================================
